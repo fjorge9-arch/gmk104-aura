@@ -1,0 +1,424 @@
+<root>
+    <header>AURA_3.0</header>
+    <performance>1</performance>
+    <performanceLevel>0</performanceLevel>
+    <version>1.0</version>
+    <effectProvider>
+        <period>0</period>
+        <queue>
+            <effect key="CustomDLCEff0">
+                <viewport>CustomDLCEff0</viewport>
+                <trigger>OneTime</trigger>
+                <delay>0</delay>
+                <duration>-1</duration>
+                <layer>0</layer>
+            </effect>
+            <effect key="CustomDLCEff1">
+                <viewport>CustomDLCEff1</viewport>
+                <trigger>OneTime</trigger>
+                <delay>0</delay>
+                <duration>-1</duration>
+                <layer>0</layer>
+            </effect>
+            <effect key="CustomDLCEff2">
+                <viewport>CustomDLCEff2</viewport>
+                <trigger>OneTime</trigger>
+                <delay>0</delay>
+                <duration>-1</duration>
+                <layer>0</layer>
+            </effect>
+            <effect key="CustomDLCEff30">
+                <viewport>CustomDLCEff30</viewport>
+                <trigger>OneTime</trigger>
+                <delay>0</delay>
+                <duration>-1</duration>
+                <layer>0</layer>
+            </effect>
+            <effect key="CustomDLCEff31">
+                <viewport>CustomDLCEff31</viewport>
+                <trigger>OneTime</trigger>
+                <delay>0</delay>
+                <duration>-1</duration>
+                <layer>0</layer>
+            </effect>
+        </queue>
+    </effectProvider>
+    <viewport>
+        <group key="CustomDLCEff0">
+            <device>
+                <model>ROG STRIX X570-E GAMING</model>
+                <csv>ROG STRIX X570-E GAMING</csv>
+                <type>Mainboard_Master</type>
+                <location>
+                    <x>0</x>
+                    <y>0</y>
+                </location>
+                <usage>
+                    <led key="-1"/>
+                </usage>
+            </device>
+        </group>
+        <group key="CustomDLCEff1">
+            <device>
+                <model>RTX 3080</model>
+                <csv>RTX 3080</csv>
+                <type>VGA card</type>
+                <location>
+                    <x>0</x>
+                    <y>0</y>
+                </location>
+                <usage>
+                    <led key="-1"/>
+                </usage>
+            </device>
+        </group>
+        <group key="CustomDLCEff2">
+            <device>
+                <model>Unkown</model>
+                <csv>Unkown</csv>
+                <type>DIMM</type>
+                <location>
+                    <x>0</x>
+                    <y>0</y>
+                </location>
+                <usage>
+                    <led key="-1"/>
+                </usage>
+            </device>
+        </group>
+        <group key="CustomDLCEff30">
+            <device>
+                <argbid>0</argbid>
+                <model>AddressableHeader_2</model>
+                <csv>AddressableHeader_2</csv>
+                <type>AddressableStrip</type>
+                <gen>1</gen>
+                <id>0</id>
+                <location>
+                    <x>0</x>
+                    <y>0</y>
+                </location>
+                <usage>
+                    <led key="-1"/>
+                </usage>
+            </device>
+        </group>
+        <group key="CustomDLCEff31">
+            <device>
+                <argbid>1</argbid>
+                <model>AddressableHeader_2</model>
+                <csv>AddressableHeader_2</csv>
+                <type>AddressableStrip</type>
+                <gen>1</gen>
+                <id>0</id>
+                <location>
+                    <x>0</x>
+                    <y>0</y>
+                </location>
+                <usage>
+                    <led key="-1"/>
+                </usage>
+            </device>
+        </group>
+    </viewport>
+    <effectList>
+        <effect key="CustomDLCEff0">
+            <ViceEffect key="Animation">
+                <anime key="anime_">
+                    <animelist>
+                        <start>0</start>
+                        <length>15000</length>
+                        <type>gif</type>
+                        <source>C:\ProgramData\ASUS\PermanentEffect\data\HW\Peripheral_Effect.gif</source>
+                        <fullCover>1</fullCover>
+                        <x>0</x>
+                        <y>0</y>
+                        <crop_x/>
+                        <crop_y/>
+                        <crop_width/>
+                        <crop_height/>
+                        <width/>
+                        <height/>
+                        <repeat>1</repeat>
+                        <direction>0</direction>
+                        <speed>1</speed>
+                        <brightness>0</brightness>
+                        <contrast>0</contrast>
+                    </animelist>
+                </anime>
+            </ViceEffect>
+            <viewportTransform>
+                <rotate>
+                    <x>0</x>
+                    <y>0</y>
+                    <angle>0</angle>
+                </rotate>
+                <balance>0</balance>
+                <method key="point"/>
+            </viewportTransform>
+            <waveList>
+                <wave>
+                    <type>ConstantWave</type>
+                    <max>1</max>
+                    <min>0</min>
+                    <length>23</length>
+                    <tile>0</tile>
+                    <freq>1,0</freq>
+                    <phase>0</phase>
+                    <balance>0</balance>
+                    <start>1</start>
+                    <velocity>0</velocity>
+                    <isCycle>0</isCycle>
+                    <bindToSlot>
+                        <slot key="ALPHA"/>
+                    </bindToSlot>
+                    <customized/>
+                </wave>
+            </waveList>
+            <initColor>
+                <hue>0.979803</hue>
+                <saturation>-1.000000</saturation>
+                <lightness>2088927.875000</lightness>
+                <alpha>1</alpha>
+            </initColor>
+        </effect>
+        <effect key="CustomDLCEff1">
+            <ViceEffect key="Animation">
+                <anime key="anime_">
+                    <animelist>
+                        <start>0</start>
+                        <length>15000</length>
+                        <type>gif</type>
+                        <source>C:\ProgramData\ASUS\PermanentEffect\data\HW\Peripheral_Effect.gif</source>
+                        <fullCover>1</fullCover>
+                        <x>0</x>
+                        <y>0</y>
+                        <crop_x/>
+                        <crop_y/>
+                        <crop_width/>
+                        <crop_height/>
+                        <width/>
+                        <height/>
+                        <repeat>1</repeat>
+                        <direction>0</direction>
+                        <speed>1</speed>
+                        <brightness>0</brightness>
+                        <contrast>0</contrast>
+                    </animelist>
+                </anime>
+            </ViceEffect>
+            <viewportTransform>
+                <rotate>
+                    <x>0</x>
+                    <y>0</y>
+                    <angle>0</angle>
+                </rotate>
+                <balance>0</balance>
+                <method key="point"/>
+            </viewportTransform>
+            <waveList>
+                <wave>
+                    <type>ConstantWave</type>
+                    <max>1</max>
+                    <min>0</min>
+                    <length>23</length>
+                    <tile>0</tile>
+                    <freq>1,0</freq>
+                    <phase>0</phase>
+                    <balance>0</balance>
+                    <start>1</start>
+                    <velocity>0</velocity>
+                    <isCycle>0</isCycle>
+                    <bindToSlot>
+                        <slot key="ALPHA"/>
+                    </bindToSlot>
+                    <customized/>
+                </wave>
+            </waveList>
+            <initColor>
+                <hue>0.979803</hue>
+                <saturation>-1.000000</saturation>
+                <lightness>2088927.875000</lightness>
+                <alpha>1</alpha>
+            </initColor>
+        </effect>
+        <effect key="CustomDLCEff2">
+            <ViceEffect key="Animation">
+                <anime key="anime_">
+                    <animelist>
+                        <start>0</start>
+                        <length>15000</length>
+                        <type>gif</type>
+                        <source>C:\ProgramData\ASUS\PermanentEffect\data\HW\Peripheral_Effect.gif</source>
+                        <fullCover>1</fullCover>
+                        <x>0</x>
+                        <y>0</y>
+                        <crop_x/>
+                        <crop_y/>
+                        <crop_width/>
+                        <crop_height/>
+                        <width/>
+                        <height/>
+                        <repeat>1</repeat>
+                        <direction>0</direction>
+                        <speed>1</speed>
+                        <brightness>0</brightness>
+                        <contrast>0</contrast>
+                    </animelist>
+                </anime>
+            </ViceEffect>
+            <viewportTransform>
+                <rotate>
+                    <x>0</x>
+                    <y>0</y>
+                    <angle>0</angle>
+                </rotate>
+                <balance>0</balance>
+                <method key="point"/>
+            </viewportTransform>
+            <waveList>
+                <wave>
+                    <type>ConstantWave</type>
+                    <max>1</max>
+                    <min>0</min>
+                    <length>23</length>
+                    <tile>0</tile>
+                    <freq>1,0</freq>
+                    <phase>0</phase>
+                    <balance>0</balance>
+                    <start>1</start>
+                    <velocity>0</velocity>
+                    <isCycle>0</isCycle>
+                    <bindToSlot>
+                        <slot key="ALPHA"/>
+                    </bindToSlot>
+                    <customized/>
+                </wave>
+            </waveList>
+            <initColor>
+                <hue>0.979803</hue>
+                <saturation>-1.000000</saturation>
+                <lightness>2088927.875000</lightness>
+                <alpha>1</alpha>
+            </initColor>
+        </effect>
+        <effect key="CustomDLCEff30">
+            <ViceEffect key="Animation">
+                <anime key="anime_">
+                    <animelist>
+                        <start>0</start>
+                        <length>15000</length>
+                        <type>gif</type>
+                        <source>C:\ProgramData\ASUS\PermanentEffect\data\HW\Peripheral_Effect.gif</source>
+                        <fullCover>1</fullCover>
+                        <x>0</x>
+                        <y>0</y>
+                        <crop_x/>
+                        <crop_y/>
+                        <crop_width/>
+                        <crop_height/>
+                        <width/>
+                        <height/>
+                        <repeat>1</repeat>
+                        <direction>0</direction>
+                        <speed>1</speed>
+                        <brightness>0</brightness>
+                        <contrast>0</contrast>
+                    </animelist>
+                </anime>
+            </ViceEffect>
+            <viewportTransform>
+                <rotate>
+                    <x>0</x>
+                    <y>0</y>
+                    <angle>0</angle>
+                </rotate>
+                <balance>0</balance>
+                <method key="point"/>
+            </viewportTransform>
+            <waveList>
+                <wave>
+                    <type>ConstantWave</type>
+                    <max>1</max>
+                    <min>0</min>
+                    <length>23</length>
+                    <tile>0</tile>
+                    <freq>1,0</freq>
+                    <phase>0</phase>
+                    <balance>0</balance>
+                    <start>1</start>
+                    <velocity>0</velocity>
+                    <isCycle>0</isCycle>
+                    <bindToSlot>
+                        <slot key="ALPHA"/>
+                    </bindToSlot>
+                    <customized/>
+                </wave>
+            </waveList>
+            <initColor>
+                <hue>0.979803</hue>
+                <saturation>-1.000000</saturation>
+                <lightness>2088927.875000</lightness>
+                <alpha>1</alpha>
+            </initColor>
+        </effect>
+        <effect key="CustomDLCEff31">
+            <ViceEffect key="Animation">
+                <anime key="anime_">
+                    <animelist/>
+                </anime>
+            </ViceEffect>
+            <viewportTransform>
+                <rotate>
+                    <x>0</x>
+                    <y>0</y>
+                    <angle>0</angle>
+                </rotate>
+                <balance>0</balance>
+                <method key="point"/>
+            </viewportTransform>
+            <waveList>
+                <wave>
+                    <type>ConstantWave</type>
+                    <max>1</max>
+                    <min>0</min>
+                    <length>23</length>
+                    <tile>0</tile>
+                    <freq>1,0</freq>
+                    <phase>0</phase>
+                    <balance>0</balance>
+                    <start>1</start>
+                    <velocity>0</velocity>
+                    <isCycle>0</isCycle>
+                    <bindToSlot>
+                        <slot key="ALPHA"/>
+                    </bindToSlot>
+                    <customized/>
+                </wave>
+                <wave>
+                    <type>ConstantWave</type>
+                    <max>1</max>
+                    <min>0</min>
+                    <length>23</length>
+                    <tile>0</tile>
+                    <freq>1,0</freq>
+                    <phase>0</phase>
+                    <balance>0</balance>
+                    <start>1</start>
+                    <velocity>0</velocity>
+                    <isCycle>0</isCycle>
+                    <bindToSlot>
+                        <slot key="ALPHA"/>
+                    </bindToSlot>
+                    <customized/>
+                </wave>
+            </waveList>
+            <initColor>
+                <hue>0.979803</hue>
+                <saturation>-1.000000</saturation>
+                <lightness>2088927.875000</lightness>
+                <alpha>1</alpha>
+            </initColor>
+        </effect>
+    </effectList>
+</root>

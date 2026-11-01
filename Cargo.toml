@@ -1,6 +1,6 @@
 [package]
 name = "gmk104-aura"
-version = "0.4.0"
+version = "0.5.0"
 edition = "2021"
 description = "Teclado ZUOYA GMK104 segue a cor que o ASUS Aura Sync aplica na placa-mãe"
 license = "MIT"

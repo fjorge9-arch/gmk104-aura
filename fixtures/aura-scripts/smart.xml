@@ -1,0 +1,1029 @@
+<root>
+    <header>AURA_3.0</header>
+    <performance>1</performance>
+    <performanceLevel>0</performanceLevel>
+    <version>1.0</version>
+    <effectProvider>
+        <period>0</period>
+        <queue>
+            <effect key="Smartmode">
+                <viewport>SmartSingleLayer0</viewport>
+                <trigger>Thermal_Low</trigger>
+                <delay>0</delay>
+                <duration>-1</duration>
+                <layer>0</layer>
+                <Threshold_high>85</Threshold_high>
+                <Threshold_low>65</Threshold_low>
+                <smartmode_effect key="SmartSingleEff00">
+                    <trigger>Thermal_Low</trigger>
+                    <smartmode_swtich>1</smartmode_swtich>
+                </smartmode_effect>
+            </effect>
+            <effect key="Smartmode">
+                <viewport>SmartSingleLayer0</viewport>
+                <trigger>Thermal_Between</trigger>
+                <delay>0</delay>
+                <duration>-1</duration>
+                <layer>0</layer>
+                <Threshold_high>85</Threshold_high>
+                <Threshold_low>65</Threshold_low>
+                <smartmode_effect key="SmartSingleEff10">
+                    <trigger>Thermal_Between</trigger>
+                    <smartmode_swtich>1</smartmode_swtich>
+                </smartmode_effect>
+            </effect>
+            <effect key="Smartmode">
+                <viewport>SmartSingleLayer0</viewport>
+                <trigger>Thermal_High</trigger>
+                <delay>0</delay>
+                <duration>-1</duration>
+                <layer>0</layer>
+                <Threshold_high>85</Threshold_high>
+                <Threshold_low>65</Threshold_low>
+                <smartmode_effect key="SmartSingleEff20">
+                    <trigger>Thermal_High</trigger>
+                    <smartmode_swtich>1</smartmode_swtich>
+                </smartmode_effect>
+            </effect>
+            <effect key="Smartmode">
+                <viewport>SmartSingleLayer1</viewport>
+                <trigger>Thermal_Low</trigger>
+                <delay>0</delay>
+                <duration>-1</duration>
+                <layer>0</layer>
+                <Threshold_high>85</Threshold_high>
+                <Threshold_low>65</Threshold_low>
+                <smartmode_effect key="SmartSingleEff01">
+                    <trigger>Thermal_Low</trigger>
+                    <smartmode_swtich>1</smartmode_swtich>
+                </smartmode_effect>
+            </effect>
+            <effect key="Smartmode">
+                <viewport>SmartSingleLayer1</viewport>
+                <trigger>Thermal_Between</trigger>
+                <delay>0</delay>
+                <duration>-1</duration>
+                <layer>0</layer>
+                <Threshold_high>85</Threshold_high>
+                <Threshold_low>65</Threshold_low>
+                <smartmode_effect key="SmartSingleEff11">
+                    <trigger>Thermal_Between</trigger>
+                    <smartmode_swtich>1</smartmode_swtich>
+                </smartmode_effect>
+            </effect>
+            <effect key="Smartmode">
+                <viewport>SmartSingleLayer1</viewport>
+                <trigger>Thermal_High</trigger>
+                <delay>0</delay>
+                <duration>-1</duration>
+                <layer>0</layer>
+                <Threshold_high>85</Threshold_high>
+                <Threshold_low>65</Threshold_low>
+                <smartmode_effect key="SmartSingleEff21">
+                    <trigger>Thermal_High</trigger>
+                    <smartmode_swtich>1</smartmode_swtich>
+                </smartmode_effect>
+            </effect>
+            <effect key="Smartmode">
+                <viewport>SmartSingleLayer2</viewport>
+                <trigger>Thermal_Low</trigger>
+                <delay>0</delay>
+                <duration>-1</duration>
+                <layer>0</layer>
+                <Threshold_high>85</Threshold_high>
+                <Threshold_low>65</Threshold_low>
+                <smartmode_effect key="SmartSingleEff02">
+                    <trigger>Thermal_Low</trigger>
+                    <smartmode_swtich>1</smartmode_swtich>
+                </smartmode_effect>
+            </effect>
+            <effect key="Smartmode">
+                <viewport>SmartSingleLayer2</viewport>
+                <trigger>Thermal_Between</trigger>
+                <delay>0</delay>
+                <duration>-1</duration>
+                <layer>0</layer>
+                <Threshold_high>85</Threshold_high>
+                <Threshold_low>65</Threshold_low>
+                <smartmode_effect key="SmartSingleEff12">
+                    <trigger>Thermal_Between</trigger>
+                    <smartmode_swtich>1</smartmode_swtich>
+                </smartmode_effect>
+            </effect>
+            <effect key="Smartmode">
+                <viewport>SmartSingleLayer2</viewport>
+                <trigger>Thermal_High</trigger>
+                <delay>0</delay>
+                <duration>-1</duration>
+                <layer>0</layer>
+                <Threshold_high>85</Threshold_high>
+                <Threshold_low>65</Threshold_low>
+                <smartmode_effect key="SmartSingleEff22">
+                    <trigger>Thermal_High</trigger>
+                    <smartmode_swtich>1</smartmode_swtich>
+                </smartmode_effect>
+            </effect>
+            <effect key="Smartmode">
+                <viewport>SmartSingleLayer30</viewport>
+                <trigger>Thermal_Low</trigger>
+                <delay>0</delay>
+                <duration>-1</duration>
+                <layer>0</layer>
+                <Threshold_high>85</Threshold_high>
+                <Threshold_low>65</Threshold_low>
+                <smartmode_effect key="SmartSingleEff030">
+                    <trigger>Thermal_Low</trigger>
+                    <smartmode_swtich>1</smartmode_swtich>
+                </smartmode_effect>
+            </effect>
+            <effect key="Smartmode">
+                <viewport>SmartSingleLayer30</viewport>
+                <trigger>Thermal_Between</trigger>
+                <delay>0</delay>
+                <duration>-1</duration>
+                <layer>0</layer>
+                <Threshold_high>85</Threshold_high>
+                <Threshold_low>65</Threshold_low>
+                <smartmode_effect key="SmartSingleEff130">
+                    <trigger>Thermal_Between</trigger>
+                    <smartmode_swtich>1</smartmode_swtich>
+                </smartmode_effect>
+            </effect>
+            <effect key="Smartmode">
+                <viewport>SmartSingleLayer30</viewport>
+                <trigger>Thermal_High</trigger>
+                <delay>0</delay>
+                <duration>-1</duration>
+                <layer>0</layer>
+                <Threshold_high>85</Threshold_high>
+                <Threshold_low>65</Threshold_low>
+                <smartmode_effect key="SmartSingleEff230">
+                    <trigger>Thermal_High</trigger>
+                    <smartmode_swtich>1</smartmode_swtich>
+                </smartmode_effect>
+            </effect>
+            <effect key="Smartmode">
+                <viewport>SmartSingleLayer31</viewport>
+                <trigger>Thermal_Low</trigger>
+                <delay>0</delay>
+                <duration>-1</duration>
+                <layer>0</layer>
+                <Threshold_high>85</Threshold_high>
+                <Threshold_low>65</Threshold_low>
+                <smartmode_effect key="SmartSingleEff031">
+                    <trigger>Thermal_Low</trigger>
+                    <smartmode_swtich>1</smartmode_swtich>
+                </smartmode_effect>
+            </effect>
+            <effect key="Smartmode">
+                <viewport>SmartSingleLayer31</viewport>
+                <trigger>Thermal_Between</trigger>
+                <delay>0</delay>
+                <duration>-1</duration>
+                <layer>0</layer>
+                <Threshold_high>85</Threshold_high>
+                <Threshold_low>65</Threshold_low>
+                <smartmode_effect key="SmartSingleEff131">
+                    <trigger>Thermal_Between</trigger>
+                    <smartmode_swtich>1</smartmode_swtich>
+                </smartmode_effect>
+            </effect>
+            <effect key="Smartmode">
+                <viewport>SmartSingleLayer31</viewport>
+                <trigger>Thermal_High</trigger>
+                <delay>0</delay>
+                <duration>-1</duration>
+                <layer>0</layer>
+                <Threshold_high>85</Threshold_high>
+                <Threshold_low>65</Threshold_low>
+                <smartmode_effect key="SmartSingleEff231">
+                    <trigger>Thermal_High</trigger>
+                    <smartmode_swtich>1</smartmode_swtich>
+                </smartmode_effect>
+            </effect>
+        </queue>
+    </effectProvider>
+    <viewport>
+        <group key="SmartSingleLayer0">
+            <device>
+                <model>ROG STRIX X570-E GAMING</model>
+                <csv>ROG STRIX X570-E GAMING</csv>
+                <type>Mainboard_Master</type>
+                <location>
+                    <x>0</x>
+                    <y>0</y>
+                </location>
+                <usage>
+                    <led key="-1"/>
+                </usage>
+            </device>
+        </group>
+        <group key="SmartSingleLayer0">
+            <device>
+                <model>ROG STRIX X570-E GAMING</model>
+                <csv>ROG STRIX X570-E GAMING</csv>
+                <type>Mainboard_Master</type>
+                <location>
+                    <x>0</x>
+                    <y>0</y>
+                </location>
+                <usage>
+                    <led key="-1"/>
+                </usage>
+            </device>
+        </group>
+        <group key="SmartSingleLayer0">
+            <device>
+                <model>ROG STRIX X570-E GAMING</model>
+                <csv>ROG STRIX X570-E GAMING</csv>
+                <type>Mainboard_Master</type>
+                <location>
+                    <x>0</x>
+                    <y>0</y>
+                </location>
+                <usage>
+                    <led key="-1"/>
+                </usage>
+            </device>
+        </group>
+        <group key="SmartSingleLayer1">
+            <device>
+                <model>RTX 3080</model>
+                <csv>RTX 3080</csv>
+                <type>VGA card</type>
+                <location>
+                    <x>0</x>
+                    <y>0</y>
+                </location>
+                <usage>
+                    <led key="-1"/>
+                </usage>
+            </device>
+        </group>
+        <group key="SmartSingleLayer1">
+            <device>
+                <model>RTX 3080</model>
+                <csv>RTX 3080</csv>
+                <type>VGA card</type>
+                <location>
+                    <x>0</x>
+                    <y>0</y>
+                </location>
+                <usage>
+                    <led key="-1"/>
+                </usage>
+            </device>
+        </group>
+        <group key="SmartSingleLayer1">
+            <device>
+                <model>RTX 3080</model>
+                <csv>RTX 3080</csv>
+                <type>VGA card</type>
+                <location>
+                    <x>0</x>
+                    <y>0</y>
+                </location>
+                <usage>
+                    <led key="-1"/>
+                </usage>
+            </device>
+        </group>
+        <group key="SmartSingleLayer2">
+            <device>
+                <model>Unkown</model>
+                <csv>Unkown</csv>
+                <type>DIMM</type>
+                <location>
+                    <x>0</x>
+                    <y>0</y>
+                </location>
+                <usage>
+                    <led key="-1"/>
+                </usage>
+            </device>
+        </group>
+        <group key="SmartSingleLayer2">
+            <device>
+                <model>Unkown</model>
+                <csv>Unkown</csv>
+                <type>DIMM</type>
+                <location>
+                    <x>0</x>
+                    <y>0</y>
+                </location>
+                <usage>
+                    <led key="-1"/>
+                </usage>
+            </device>
+        </group>
+        <group key="SmartSingleLayer2">
+            <device>
+                <model>Unkown</model>
+                <csv>Unkown</csv>
+                <type>DIMM</type>
+                <location>
+                    <x>0</x>
+                    <y>0</y>
+                </location>
+                <usage>
+                    <led key="-1"/>
+                </usage>
+            </device>
+        </group>
+        <group key="SmartSingleLayer30">
+            <device>
+                <argbid>0</argbid>
+                <model>AddressableHeader_2</model>
+                <csv>AddressableHeader_2</csv>
+                <type>AddressableStrip</type>
+                <gen>1</gen>
+                <id>0</id>
+                <location>
+                    <x>0</x>
+                    <y>0</y>
+                </location>
+                <usage>
+                    <led key="-1"/>
+                </usage>
+            </device>
+        </group>
+        <group key="SmartSingleLayer30">
+            <device>
+                <argbid>0</argbid>
+                <model>AddressableHeader_2</model>
+                <csv>AddressableHeader_2</csv>
+                <type>AddressableStrip</type>
+                <gen>1</gen>
+                <id>0</id>
+                <location>
+                    <x>0</x>
+                    <y>0</y>
+                </location>
+                <usage>
+                    <led key="-1"/>
+                </usage>
+            </device>
+        </group>
+        <group key="SmartSingleLayer30">
+            <device>
+                <argbid>0</argbid>
+                <model>AddressableHeader_2</model>
+                <csv>AddressableHeader_2</csv>
+                <type>AddressableStrip</type>
+                <gen>1</gen>
+                <id>0</id>
+                <location>
+                    <x>0</x>
+                    <y>0</y>
+                </location>
+                <usage>
+                    <led key="-1"/>
+                </usage>
+            </device>
+        </group>
+        <group key="SmartSingleLayer31">
+            <device>
+                <argbid>1</argbid>
+                <model>AddressableHeader_2</model>
+                <csv>AddressableHeader_2</csv>
+                <type>AddressableStrip</type>
+                <gen>1</gen>
+                <id>0</id>
+                <location>
+                    <x>0</x>
+                    <y>0</y>
+                </location>
+                <usage>
+                    <led key="-1"/>
+                </usage>
+            </device>
+        </group>
+        <group key="SmartSingleLayer31">
+            <device>
+                <argbid>1</argbid>
+                <model>AddressableHeader_2</model>
+                <csv>AddressableHeader_2</csv>
+                <type>AddressableStrip</type>
+                <gen>1</gen>
+                <id>0</id>
+                <location>
+                    <x>0</x>
+                    <y>0</y>
+                </location>
+                <usage>
+                    <led key="-1"/>
+                </usage>
+            </device>
+        </group>
+        <group key="SmartSingleLayer31">
+            <device>
+                <argbid>1</argbid>
+                <model>AddressableHeader_2</model>
+                <csv>AddressableHeader_2</csv>
+                <type>AddressableStrip</type>
+                <gen>1</gen>
+                <id>0</id>
+                <location>
+                    <x>0</x>
+                    <y>0</y>
+                </location>
+                <usage>
+                    <led key="-1"/>
+                </usage>
+            </device>
+        </group>
+    </viewport>
+    <effectList>
+        <effect key="SmartSingleEff00">
+            <viewportTransform>
+                <rotate>
+                    <x>0</x>
+                    <y>0</y>
+                    <angle>0</angle>
+                </rotate>
+                <balance>0</balance>
+                <method key="point"/>
+            </viewportTransform>
+            <waveList>
+                <wave>
+                    <type>ConstantWave</type>
+                    <max>1</max>
+                    <min>0</min>
+                    <length>10</length>
+                    <tile>0</tile>
+                    <freq>0</freq>
+                    <phase>0</phase>
+                    <balance>0</balance>
+                    <start>0</start>
+                    <velocity>0</velocity>
+                    <isCycle>0</isCycle>
+                    <bindToSignal>
+                        <source>Thermal</source>
+                    </bindToSignal>
+                    <bindToSlot>
+                        <slot key="ALPHA"/>
+                    </bindToSlot>
+                    <customized/>
+                </wave>
+            </waveList>
+            <initColor>
+                <hue>0.333333</hue>
+                <saturation>1</saturation>
+                <lightness>0.500000</lightness>
+                <alpha>1</alpha>
+            </initColor>
+        </effect>
+        <effect key="SmartSingleEff10">
+            <viewportTransform>
+                <rotate>
+                    <x>0</x>
+                    <y>0</y>
+                    <angle>0</angle>
+                </rotate>
+                <balance>0</balance>
+                <method key="point"/>
+            </viewportTransform>
+            <waveList>
+                <wave>
+                    <type>ConstantWave</type>
+                    <max>1</max>
+                    <min>0</min>
+                    <length>10</length>
+                    <tile>0</tile>
+                    <freq>0</freq>
+                    <phase>0</phase>
+                    <balance>0</balance>
+                    <start>0</start>
+                    <velocity>0</velocity>
+                    <isCycle>0</isCycle>
+                    <bindToSignal>
+                        <source>Thermal</source>
+                    </bindToSignal>
+                    <bindToSlot>
+                        <slot key="ALPHA"/>
+                    </bindToSlot>
+                    <customized/>
+                </wave>
+            </waveList>
+            <initColor>
+                <hue>0.166667</hue>
+                <saturation>1</saturation>
+                <lightness>0.500000</lightness>
+                <alpha>1</alpha>
+            </initColor>
+        </effect>
+        <effect key="SmartSingleEff20">
+            <viewportTransform>
+                <rotate>
+                    <x>0</x>
+                    <y>0</y>
+                    <angle>0</angle>
+                </rotate>
+                <balance>0</balance>
+                <method key="point"/>
+            </viewportTransform>
+            <waveList>
+                <wave>
+                    <type>ConstantWave</type>
+                    <max>1</max>
+                    <min>0</min>
+                    <length>10</length>
+                    <tile>0</tile>
+                    <freq>0</freq>
+                    <phase>0</phase>
+                    <balance>0</balance>
+                    <start>0</start>
+                    <velocity>0</velocity>
+                    <isCycle>0</isCycle>
+                    <bindToSignal>
+                        <source>Thermal</source>
+                    </bindToSignal>
+                    <bindToSlot>
+                        <slot key="ALPHA"/>
+                    </bindToSlot>
+                    <customized/>
+                </wave>
+            </waveList>
+            <initColor>
+                <hue>0</hue>
+                <saturation>1</saturation>
+                <lightness>0.500000</lightness>
+                <alpha>1</alpha>
+            </initColor>
+        </effect>
+        <effect key="SmartSingleEff01">
+            <viewportTransform>
+                <rotate>
+                    <x>0</x>
+                    <y>0</y>
+                    <angle>0</angle>
+                </rotate>
+                <balance>0</balance>
+                <method key="point"/>
+            </viewportTransform>
+            <waveList>
+                <wave>
+                    <type>ConstantWave</type>
+                    <max>1</max>
+                    <min>0</min>
+                    <length>10</length>
+                    <tile>0</tile>
+                    <freq>0</freq>
+                    <phase>0</phase>
+                    <balance>0</balance>
+                    <start>0</start>
+                    <velocity>0</velocity>
+                    <isCycle>0</isCycle>
+                    <bindToSignal>
+                        <source>Thermal</source>
+                    </bindToSignal>
+                    <bindToSlot>
+                        <slot key="ALPHA"/>
+                    </bindToSlot>
+                    <customized/>
+                </wave>
+            </waveList>
+            <initColor>
+                <hue>0.333333</hue>
+                <saturation>1</saturation>
+                <lightness>0.500000</lightness>
+                <alpha>1</alpha>
+            </initColor>
+        </effect>
+        <effect key="SmartSingleEff11">
+            <viewportTransform>
+                <rotate>
+                    <x>0</x>
+                    <y>0</y>
+                    <angle>0</angle>
+                </rotate>
+                <balance>0</balance>
+                <method key="point"/>
+            </viewportTransform>
+            <waveList>
+                <wave>
+                    <type>ConstantWave</type>
+                    <max>1</max>
+                    <min>0</min>
+                    <length>10</length>
+                    <tile>0</tile>
+                    <freq>0</freq>
+                    <phase>0</phase>
+                    <balance>0</balance>
+                    <start>0</start>
+                    <velocity>0</velocity>
+                    <isCycle>0</isCycle>
+                    <bindToSignal>
+                        <source>Thermal</source>
+                    </bindToSignal>
+                    <bindToSlot>
+                        <slot key="ALPHA"/>
+                    </bindToSlot>
+                    <customized/>
+                </wave>
+            </waveList>
+            <initColor>
+                <hue>0.166667</hue>
+                <saturation>1</saturation>
+                <lightness>0.500000</lightness>
+                <alpha>1</alpha>
+            </initColor>
+        </effect>
+        <effect key="SmartSingleEff21">
+            <viewportTransform>
+                <rotate>
+                    <x>0</x>
+                    <y>0</y>
+                    <angle>0</angle>
+                </rotate>
+                <balance>0</balance>
+                <method key="point"/>
+            </viewportTransform>
+            <waveList>
+                <wave>
+                    <type>ConstantWave</type>
+                    <max>1</max>
+                    <min>0</min>
+                    <length>10</length>
+                    <tile>0</tile>
+                    <freq>0</freq>
+                    <phase>0</phase>
+                    <balance>0</balance>
+                    <start>0</start>
+                    <velocity>0</velocity>
+                    <isCycle>0</isCycle>
+                    <bindToSignal>
+                        <source>Thermal</source>
+                    </bindToSignal>
+                    <bindToSlot>
+                        <slot key="ALPHA"/>
+                    </bindToSlot>
+                    <customized/>
+                </wave>
+            </waveList>
+            <initColor>
+                <hue>0</hue>
+                <saturation>1</saturation>
+                <lightness>0.500000</lightness>
+                <alpha>1</alpha>
+            </initColor>
+        </effect>
+        <effect key="SmartSingleEff02">
+            <viewportTransform>
+                <rotate>
+                    <x>0</x>
+                    <y>0</y>
+                    <angle>0</angle>
+                </rotate>
+                <balance>0</balance>
+                <method key="point"/>
+            </viewportTransform>
+            <waveList>
+                <wave>
+                    <type>ConstantWave</type>
+                    <max>1</max>
+                    <min>0</min>
+                    <length>10</length>
+                    <tile>0</tile>
+                    <freq>0</freq>
+                    <phase>0</phase>
+                    <balance>0</balance>
+                    <start>0</start>
+                    <velocity>0</velocity>
+                    <isCycle>0</isCycle>
+                    <bindToSignal>
+                        <source>Thermal</source>
+                    </bindToSignal>
+                    <bindToSlot>
+                        <slot key="ALPHA"/>
+                    </bindToSlot>
+                    <customized/>
+                </wave>
+            </waveList>
+            <initColor>
+                <hue>0.333333</hue>
+                <saturation>1</saturation>
+                <lightness>0.500000</lightness>
+                <alpha>1</alpha>
+            </initColor>
+        </effect>
+        <effect key="SmartSingleEff12">
+            <viewportTransform>
+                <rotate>
+                    <x>0</x>
+                    <y>0</y>
+                    <angle>0</angle>
+                </rotate>
+                <balance>0</balance>
+                <method key="point"/>
+            </viewportTransform>
+            <waveList>
+                <wave>
+                    <type>ConstantWave</type>
+                    <max>1</max>
+                    <min>0</min>
+                    <length>10</length>
+                    <tile>0</tile>
+                    <freq>0</freq>
+                    <phase>0</phase>
+                    <balance>0</balance>
+                    <start>0</start>
+                    <velocity>0</velocity>
+                    <isCycle>0</isCycle>
+                    <bindToSignal>
+                        <source>Thermal</source>
+                    </bindToSignal>
+                    <bindToSlot>
+                        <slot key="ALPHA"/>
+                    </bindToSlot>
+                    <customized/>
+                </wave>
+            </waveList>
+            <initColor>
+                <hue>0.166667</hue>
+                <saturation>1</saturation>
+                <lightness>0.500000</lightness>
+                <alpha>1</alpha>
+            </initColor>
+        </effect>
+        <effect key="SmartSingleEff22">
+            <viewportTransform>
+                <rotate>
+                    <x>0</x>
+                    <y>0</y>
+                    <angle>0</angle>
+                </rotate>
+                <balance>0</balance>
+                <method key="point"/>
+            </viewportTransform>
+            <waveList>
+                <wave>
+                    <type>ConstantWave</type>
+                    <max>1</max>
+                    <min>0</min>
+                    <length>10</length>
+                    <tile>0</tile>
+                    <freq>0</freq>
+                    <phase>0</phase>
+                    <balance>0</balance>
+                    <start>0</start>
+                    <velocity>0</velocity>
+                    <isCycle>0</isCycle>
+                    <bindToSignal>
+                        <source>Thermal</source>
+                    </bindToSignal>
+                    <bindToSlot>
+                        <slot key="ALPHA"/>
+                    </bindToSlot>
+                    <customized/>
+                </wave>
+            </waveList>
+            <initColor>
+                <hue>0</hue>
+                <saturation>1</saturation>
+                <lightness>0.500000</lightness>
+                <alpha>1</alpha>
+            </initColor>
+        </effect>
+        <effect key="SmartSingleEff030">
+            <viewportTransform>
+                <rotate>
+                    <x>0</x>
+                    <y>0</y>
+                    <angle>0</angle>
+                </rotate>
+                <balance>0</balance>
+                <method key="point"/>
+            </viewportTransform>
+            <waveList>
+                <wave>
+                    <type>ConstantWave</type>
+                    <max>1</max>
+                    <min>0</min>
+                    <length>10</length>
+                    <tile>0</tile>
+                    <freq>0</freq>
+                    <phase>0</phase>
+                    <balance>0</balance>
+                    <start>0</start>
+                    <velocity>0</velocity>
+                    <isCycle>0</isCycle>
+                    <bindToSignal>
+                        <source>Thermal</source>
+                    </bindToSignal>
+                    <bindToSlot>
+                        <slot key="ALPHA"/>
+                    </bindToSlot>
+                    <customized/>
+                </wave>
+            </waveList>
+            <initColor>
+                <hue>0.333333</hue>
+                <saturation>1</saturation>
+                <lightness>0.500000</lightness>
+                <alpha>1</alpha>
+            </initColor>
+        </effect>
+        <effect key="SmartSingleEff130">
+            <viewportTransform>
+                <rotate>
+                    <x>0</x>
+                    <y>0</y>
+                    <angle>0</angle>
+                </rotate>
+                <balance>0</balance>
+                <method key="point"/>
+            </viewportTransform>
+            <waveList>
+                <wave>
+                    <type>ConstantWave</type>
+                    <max>1</max>
+                    <min>0</min>
+                    <length>10</length>
+                    <tile>0</tile>
+                    <freq>0</freq>
+                    <phase>0</phase>
+                    <balance>0</balance>
+                    <start>0</start>
+                    <velocity>0</velocity>
+                    <isCycle>0</isCycle>
+                    <bindToSignal>
+                        <source>Thermal</source>
+                    </bindToSignal>
+                    <bindToSlot>
+                        <slot key="ALPHA"/>
+                    </bindToSlot>
+                    <customized/>
+                </wave>
+            </waveList>
+            <initColor>
+                <hue>0.166667</hue>
+                <saturation>1</saturation>
+                <lightness>0.500000</lightness>
+                <alpha>1</alpha>
+            </initColor>
+        </effect>
+        <effect key="SmartSingleEff230">
+            <viewportTransform>
+                <rotate>
+                    <x>0</x>
+                    <y>0</y>
+                    <angle>0</angle>
+                </rotate>
+                <balance>0</balance>
+                <method key="point"/>
+            </viewportTransform>
+            <waveList>
+                <wave>
+                    <type>ConstantWave</type>
+                    <max>1</max>
+                    <min>0</min>
+                    <length>10</length>
+                    <tile>0</tile>
+                    <freq>0</freq>
+                    <phase>0</phase>
+                    <balance>0</balance>
+                    <start>0</start>
+                    <velocity>0</velocity>
+                    <isCycle>0</isCycle>
+                    <bindToSignal>
+                        <source>Thermal</source>
+                    </bindToSignal>
+                    <bindToSlot>
+                        <slot key="ALPHA"/>
+                    </bindToSlot>
+                    <customized/>
+                </wave>
+            </waveList>
+            <initColor>
+                <hue>0</hue>
+                <saturation>1</saturation>
+                <lightness>0.500000</lightness>
+                <alpha>1</alpha>
+            </initColor>
+        </effect>
+        <effect key="SmartSingleEff031">
+            <viewportTransform>
+                <rotate>
+                    <x>0</x>
+                    <y>0</y>
+                    <angle>0</angle>
+                </rotate>
+                <balance>0</balance>
+                <method key="point"/>
+            </viewportTransform>
+            <waveList>
+                <wave>
+                    <type>ConstantWave</type>
+                    <max>1</max>
+                    <min>0</min>
+                    <length>10</length>
+                    <tile>0</tile>
+                    <freq>0</freq>
+                    <phase>0</phase>
+                    <balance>0</balance>
+                    <start>0</start>
+                    <velocity>0</velocity>
+                    <isCycle>0</isCycle>
+                    <bindToSignal>
+                        <source>Thermal</source>
+                    </bindToSignal>
+                    <bindToSlot>
+                        <slot key="ALPHA"/>
+                    </bindToSlot>
+                    <customized/>
+                </wave>
+            </waveList>
+            <initColor>
+                <hue>0.333333</hue>
+                <saturation>1</saturation>
+                <lightness>0.500000</lightness>
+                <alpha>1</alpha>
+            </initColor>
+        </effect>
+        <effect key="SmartSingleEff131">
+            <viewportTransform>
+                <rotate>
+                    <x>0</x>
+                    <y>0</y>
+                    <angle>0</angle>
+                </rotate>
+                <balance>0</balance>
+                <method key="point"/>
+            </viewportTransform>
+            <waveList>
+                <wave>
+                    <type>ConstantWave</type>
+                    <max>1</max>
+                    <min>0</min>
+                    <length>10</length>
+                    <tile>0</tile>
+                    <freq>0</freq>
+                    <phase>0</phase>
+                    <balance>0</balance>
+                    <start>0</start>
+                    <velocity>0</velocity>
+                    <isCycle>0</isCycle>
+                    <bindToSignal>
+                        <source>Thermal</source>
+                    </bindToSignal>
+                    <bindToSlot>
+                        <slot key="ALPHA"/>
+                    </bindToSlot>
+                    <customized/>
+                </wave>
+            </waveList>
+            <initColor>
+                <hue>0.166667</hue>
+                <saturation>1</saturation>
+                <lightness>0.500000</lightness>
+                <alpha>1</alpha>
+            </initColor>
+        </effect>
+        <effect key="SmartSingleEff231">
+            <viewportTransform>
+                <rotate>
+                    <x>0</x>
+                    <y>0</y>
+                    <angle>0</angle>
+                </rotate>
+                <balance>0</balance>
+                <method key="point"/>
+            </viewportTransform>
+            <waveList>
+                <wave>
+                    <type>ConstantWave</type>
+                    <max>1</max>
+                    <min>0</min>
+                    <length>10</length>
+                    <tile>0</tile>
+                    <freq>0</freq>
+                    <phase>0</phase>
+                    <balance>0</balance>
+                    <start>0</start>
+                    <velocity>0</velocity>
+                    <isCycle>0</isCycle>
+                    <bindToSignal>
+                        <source>Thermal</source>
+                    </bindToSignal>
+                    <bindToSlot>
+                        <slot key="ALPHA"/>
+                    </bindToSlot>
+                    <customized/>
+                </wave>
+            </waveList>
+            <initColor>
+                <hue>0</hue>
+                <saturation>1</saturation>
+                <lightness>0.500000</lightness>
+                <alpha>1</alpha>
+            </initColor>
+        </effect>
+    </effectList>
+    <localSignals>
+        <signal>KeyboardInput</signal>
+        <signal>Formula</signal>
+        <signal>Thermal</signal>
+        <signal>Thermal</signal>
+    </localSignals>
+</root>

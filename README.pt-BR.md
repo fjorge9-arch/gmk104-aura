@@ -49,8 +49,24 @@ o `.exe` e, se quiser, a pasta `%LOCALAPPDATA%\gmk104-aura` (só log e um marcad
 - **Modo Smart** (térmico) → verde / amarelo / vermelho conforme a faixa que o próprio Aura escolheu,
   com as cores e limiares do seu perfil (padrão 65 °C / 85 °C). Muda por faixa, sem gradiente, igual
   ao Aura; com a CPU em cima do limiar, a placa e o teclado alternam juntos.
-- **Efeitos animados** (arco-íris, respiração, música...) não são reproduzidos quadro a quadro: o
-  teclado recebe a cor base do efeito.
+- **Efeitos animados** são imitados, não transmitidos quadro a quadro (o LightingService não expõe os
+  quadros). Cada efeito do Aura vira o que o teclado tem de mais parecido, com velocidades calibradas
+  por webcam numa ROG STRIX X570-E:
+
+  | Efeito do Aura | No teclado |
+  |---|---|
+  | Estático | mesma cor fixa |
+  | Intermitente | respiração nativa, mesma cor, o mais próximo dos 5 níveis (a `freq` do Aura é em Hz) |
+  | Ciclo de cor | matiz girando, calculada pelo programa: 12,5 s por volta, começa no verde 2,5 s após a troca, então acompanha a placa |
+  | Arco-íris | degradê nativo (TRAVERSE); a placa leva 14,5 s por volta, o nível mais lento do teclado 8 s |
+  | Estroboscópio | brilho pulsado pelo programa na frequência do script (2,4 Hz); o seu brilho é devolvido depois |
+  | Noite estrelada | efeito estrelado nativo, mesma cor, nível mais lento |
+  | Escuro | teclado apagado |
+  | Smart | por faixa de temperatura, pelo log do LightingService |
+  | Música, Imersão, Cor adaptável, efeitos baixados (Halloween...) | sem como reproduzir (dependem de áudio/tela ao vivo): o teclado mantém a última cor |
+
+  A fase nunca é garantida nos efeitos nativos do teclado (ele roda a animação sozinho); a exceção é o
+  Ciclo de cor, em que os dois lados partem de um ponto conhecido.
 - O **brilho** do teclado não é alterado; ajuste pelo Fn do próprio teclado.
 - Se você trocar o efeito do teclado por Fn, o programa volta à cor única no próximo reforço (5 s).
 - O teclado continua não aparecendo no Aura Sync, SignalRGB ou OpenRGB.
@@ -65,8 +81,13 @@ LightingService (Aura)                          gmk104-aura                     
                                              │    envia só quando muda)
 ```
 
-1. **Perfil**: `C:\Program Files (x86)\LightingService\LastProfile.xml` e `script\LastScript.xml` dizem
-   o modo atual (key `100` = Smart), a cor base da placa e, no Smart, os limiares e as três cores.
+1. **Perfil e script**: `C:\Program Files (x86)\LightingService\LastProfile.xml` traz o modo (key `100` =
+   efeito descrito por script; outros valores = modo fixo do hardware, preto = apagado) e a cor base da
+   placa. `script\LastScript.xml` é o efeito em si, um script de ondas "AURA 3.0": o grupo do viewport
+   cujo dispositivo é `Mainboard_Master` aponta para uma entrada do `effectList`, cujo prefixo da chave
+   diz o efeito (`StaticSingleEff`, `BreathSingleEff`, `ColorCycleSingleEff`, `RainbowSingleEff`,
+   `StrobingSingleEff`, `StarSingleEff`, `Smartmode`...) e cuja `wave` traz frequência (Hz) e canal
+   (`ALPHA` = brilho, `HUE`). Amostras capturadas de todos os efeitos estão em `fixtures/aura-scripts/`.
 2. **Cor da faixa**: no Smart, o LightingService escreve no log público
    `%ProgramData%\ASUS\ARMOURY CRATE Diagnosis\LightingService\LightingService.log` a linha
    `[ParseInitColor] parsed value => hue=…, saturation=…, lightness=…` toda vez que troca de faixa.
@@ -94,6 +115,16 @@ O binário sai em `target\release\gmk104-aura.exe`. Opções de linha de comando
 Organização: `src/keyboard.rs` (VIA HID), `src/aura_profile.rs` (XML do perfil), `src/aura_log.rs`
 (log do LightingService), `src/follower.rs` (laço), `src/tray.rs` (bandeja, Win32 puro),
 `src/autostart.rs` (chave Run), `src/logger.rs`.
+
+### Ferramentas de calibração (`fixtures/calib/`)
+
+Scripts Python + OpenCV usados para medir velocidades com uma webcam, mantidos para quem quiser
+calibrar outra placa ou teclado do mesmo jeito: `snapshot.py` (escolher regiões), `measure.py` (matiz
+ao longo do tempo, detecta a troca de perfil), `measure_brightness.py` (período da respiração),
+`measure_keyboard_breath.py` / `measure_keyboard_wave.py` (período de cada nível de velocidade do
+teclado num efeito nativo), `survey_keyboard_effects.py` (o que cada um dos 19 efeitos nativos faz).
+`fixtures/run_fixtures.ps1` reproduz no teclado cada script do Aura capturado. As constantes medidas
+estão em `src/follower.rs`.
 
 ### Versão Python (referência)
 

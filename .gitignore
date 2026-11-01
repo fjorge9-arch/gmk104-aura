@@ -5,3 +5,5 @@ __pycache__/
 .venv/
 *.log
 .vscode/
+fixtures/calib/*.jpg
+fixtures/calib/*.csv

@@ -1,0 +1,363 @@
+<root>
+    <header>AURA_3.0</header>
+    <performance>1</performance>
+    <performanceLevel>0</performanceLevel>
+    <version>1.0</version>
+    <effectProvider>
+        <period>2000</period>
+        <queue>
+            <effect key="MusicStatic_SingleEff0">
+                <viewport>MusicStatic_SingleEff0</viewport>
+                <trigger>OneTime</trigger>
+                <delay>0</delay>
+                <duration>-1</duration>
+                <layer>0</layer>
+            </effect>
+            <effect key="MusicStatic_SingleEff1">
+                <viewport>MusicStatic_SingleEff1</viewport>
+                <trigger>OneTime</trigger>
+                <delay>0</delay>
+                <duration>-1</duration>
+                <layer>0</layer>
+            </effect>
+            <effect key="MusicStatic_SingleEff2">
+                <viewport>MusicStatic_SingleEff2</viewport>
+                <trigger>OneTime</trigger>
+                <delay>0</delay>
+                <duration>-1</duration>
+                <layer>0</layer>
+            </effect>
+            <effect key="MusicStatic_SingleEff30">
+                <viewport>MusicStatic_SingleEff30</viewport>
+                <trigger>OneTime</trigger>
+                <delay>0</delay>
+                <duration>-1</duration>
+                <layer>0</layer>
+            </effect>
+            <effect key="MusicStatic_SingleEff31">
+                <viewport>MusicStatic_SingleEff31</viewport>
+                <trigger>OneTime</trigger>
+                <delay>0</delay>
+                <duration>-1</duration>
+                <layer>0</layer>
+            </effect>
+        </queue>
+    </effectProvider>
+    <viewport>
+        <group key="MusicStatic_SingleEff0">
+            <device>
+                <model>ROG STRIX X570-E GAMING</model>
+                <csv>ROG STRIX X570-E GAMING</csv>
+                <type>Mainboard_Master</type>
+                <location>
+                    <x>0</x>
+                    <y>0</y>
+                </location>
+                <usage>
+                    <led key="-1"/>
+                </usage>
+            </device>
+        </group>
+        <group key="MusicStatic_SingleEff1">
+            <device>
+                <model>RTX 3080</model>
+                <csv>RTX 3080</csv>
+                <type>VGA card</type>
+                <location>
+                    <x>0</x>
+                    <y>0</y>
+                </location>
+                <usage>
+                    <led key="-1"/>
+                </usage>
+            </device>
+        </group>
+        <group key="MusicStatic_SingleEff2">
+            <device>
+                <model>Unkown</model>
+                <csv>Unkown</csv>
+                <type>DIMM</type>
+                <location>
+                    <x>0</x>
+                    <y>0</y>
+                </location>
+                <usage>
+                    <led key="-1"/>
+                </usage>
+            </device>
+        </group>
+        <group key="MusicStatic_SingleEff30">
+            <device>
+                <argbid>0</argbid>
+                <model>AddressableHeader_2</model>
+                <csv>AddressableHeader_2</csv>
+                <type>AddressableStrip</type>
+                <gen>1</gen>
+                <id>0</id>
+                <location>
+                    <x>0</x>
+                    <y>0</y>
+                </location>
+                <usage>
+                    <led key="-1"/>
+                </usage>
+            </device>
+        </group>
+        <group key="MusicStatic_SingleEff31">
+            <device>
+                <argbid>1</argbid>
+                <model>AddressableHeader_2</model>
+                <csv>AddressableHeader_2</csv>
+                <type>AddressableStrip</type>
+                <gen>1</gen>
+                <id>0</id>
+                <location>
+                    <x>0</x>
+                    <y>0</y>
+                </location>
+                <usage>
+                    <led key="-1"/>
+                </usage>
+            </device>
+        </group>
+    </viewport>
+    <effectList>
+        <anime key="MusicStatic_SingleEff0">
+            <animelist>
+                <devname>Alto-falantes (Realtek(R) Audio)</devname>
+                <audiotype>204</audiotype>
+                <decayeffect>0</decayeffect>
+                <audiostrength>50</audiostrength>
+                <isBeadEnable>0</isBeadEnable>
+                <beadingspeed>3</beadingspeed>
+            </animelist>
+            <viewportTransform>
+                <rotate>
+                    <x>0</x>
+                    <y>0</y>
+                    <angle>0</angle>
+                </rotate>
+                <balance>0</balance>
+                <method key="point"/>
+            </viewportTransform>
+            <waveList>
+                <wave>
+                    <type>ConstantWave</type>
+                    <max>1</max>
+                    <min>0</min>
+                    <length>10</length>
+                    <tile>0</tile>
+                    <freq>0</freq>
+                    <phase>0</phase>
+                    <balance>0</balance>
+                    <start>0</start>
+                    <velocity>0</velocity>
+                    <isCycle>0</isCycle>
+                    <bindToSlot>
+                        <slot key="ALPHA"/>
+                    </bindToSlot>
+                    <customized/>
+                </wave>
+            </waveList>
+            <initColor>
+                <hue>0.000000</hue>
+                <saturation>1.000000</saturation>
+                <lightness>0.500000</lightness>
+                <alpha>1</alpha>
+            </initColor>
+        </anime>
+        <anime key="MusicStatic_SingleEff1">
+            <animelist>
+                <devname>Alto-falantes (Realtek(R) Audio)</devname>
+                <audiotype>204</audiotype>
+                <decayeffect>0</decayeffect>
+                <audiostrength>50</audiostrength>
+                <isBeadEnable>0</isBeadEnable>
+                <beadingspeed>3</beadingspeed>
+            </animelist>
+            <viewportTransform>
+                <rotate>
+                    <x>0</x>
+                    <y>0</y>
+                    <angle>0</angle>
+                </rotate>
+                <balance>0</balance>
+                <method key="point"/>
+            </viewportTransform>
+            <waveList>
+                <wave>
+                    <type>ConstantWave</type>
+                    <max>1</max>
+                    <min>0</min>
+                    <length>10</length>
+                    <tile>0</tile>
+                    <freq>0</freq>
+                    <phase>0</phase>
+                    <balance>0</balance>
+                    <start>0</start>
+                    <velocity>0</velocity>
+                    <isCycle>0</isCycle>
+                    <bindToSlot>
+                        <slot key="ALPHA"/>
+                    </bindToSlot>
+                    <customized/>
+                </wave>
+            </waveList>
+            <initColor>
+                <hue>0.000000</hue>
+                <saturation>1.000000</saturation>
+                <lightness>0.500000</lightness>
+                <alpha>1</alpha>
+            </initColor>
+        </anime>
+        <anime key="MusicStatic_SingleEff2">
+            <animelist>
+                <devname>Alto-falantes (Realtek(R) Audio)</devname>
+                <audiotype>204</audiotype>
+                <decayeffect>0</decayeffect>
+                <audiostrength>50</audiostrength>
+                <isBeadEnable>0</isBeadEnable>
+                <beadingspeed>3</beadingspeed>
+            </animelist>
+            <viewportTransform>
+                <rotate>
+                    <x>0</x>
+                    <y>0</y>
+                    <angle>0</angle>
+                </rotate>
+                <balance>0</balance>
+                <method key="point"/>
+            </viewportTransform>
+            <waveList>
+                <wave>
+                    <type>ConstantWave</type>
+                    <max>1</max>
+                    <min>0</min>
+                    <length>10</length>
+                    <tile>0</tile>
+                    <freq>0</freq>
+                    <phase>0</phase>
+                    <balance>0</balance>
+                    <start>0</start>
+                    <velocity>0</velocity>
+                    <isCycle>0</isCycle>
+                    <bindToSlot>
+                        <slot key="ALPHA"/>
+                    </bindToSlot>
+                    <customized/>
+                </wave>
+            </waveList>
+            <initColor>
+                <hue>0.000000</hue>
+                <saturation>1.000000</saturation>
+                <lightness>0.500000</lightness>
+                <alpha>1</alpha>
+            </initColor>
+        </anime>
+        <anime key="MusicStatic_SingleEff30">
+            <animelist>
+                <devname>Alto-falantes (Realtek(R) Audio)</devname>
+                <audiotype>204</audiotype>
+                <decayeffect>0</decayeffect>
+                <audiostrength>50</audiostrength>
+                <isBeadEnable>0</isBeadEnable>
+                <beadingspeed>3</beadingspeed>
+            </animelist>
+            <viewportTransform>
+                <rotate>
+                    <x>0</x>
+                    <y>0</y>
+                    <angle>0</angle>
+                </rotate>
+                <balance>0</balance>
+                <method key="point"/>
+            </viewportTransform>
+            <waveList>
+                <wave>
+                    <type>ConstantWave</type>
+                    <max>1</max>
+                    <min>0</min>
+                    <length>10</length>
+                    <tile>0</tile>
+                    <freq>0</freq>
+                    <phase>0</phase>
+                    <balance>0</balance>
+                    <start>0</start>
+                    <velocity>0</velocity>
+                    <isCycle>0</isCycle>
+                    <bindToSlot>
+                        <slot key="ALPHA"/>
+                    </bindToSlot>
+                    <customized/>
+                </wave>
+            </waveList>
+            <initColor>
+                <hue>0.000000</hue>
+                <saturation>1.000000</saturation>
+                <lightness>0.500000</lightness>
+                <alpha>1</alpha>
+            </initColor>
+        </anime>
+        <anime key="MusicStatic_SingleEff31">
+            <animelist>
+                <devname>Alto-falantes (Realtek(R) Audio)</devname>
+                <audiotype>204</audiotype>
+                <decayeffect>0</decayeffect>
+                <audiostrength>50</audiostrength>
+                <isBeadEnable>0</isBeadEnable>
+                <beadingspeed>3</beadingspeed>
+            </animelist>
+            <viewportTransform>
+                <rotate>
+                    <x>0</x>
+                    <y>0</y>
+                    <angle>0</angle>
+                </rotate>
+                <balance>0</balance>
+                <method key="point"/>
+            </viewportTransform>
+            <waveList>
+                <wave>
+                    <type>ConstantWave</type>
+                    <max>1</max>
+                    <min>0</min>
+                    <length>10</length>
+                    <tile>0</tile>
+                    <freq>0</freq>
+                    <phase>0</phase>
+                    <balance>0</balance>
+                    <start>0</start>
+                    <velocity>0</velocity>
+                    <isCycle>0</isCycle>
+                    <bindToSlot>
+                        <slot key="ALPHA"/>
+                    </bindToSlot>
+                    <customized/>
+                </wave>
+                <wave>
+                    <type>ConstantWave</type>
+                    <max>1</max>
+                    <min>0</min>
+                    <length>10</length>
+                    <tile>0</tile>
+                    <freq>0</freq>
+                    <phase>0</phase>
+                    <balance>0</balance>
+                    <start>0</start>
+                    <velocity>0</velocity>
+                    <isCycle>0</isCycle>
+                    <bindToSlot>
+                        <slot key="ALPHA"/>
+                    </bindToSlot>
+                    <customized/>
+                </wave>
+            </waveList>
+            <initColor>
+                <hue>0.000000</hue>
+                <saturation>1.000000</saturation>
+                <lightness>0.500000</lightness>
+                <alpha>1</alpha>
+            </initColor>
+        </anime>
+    </effectList>
+</root>

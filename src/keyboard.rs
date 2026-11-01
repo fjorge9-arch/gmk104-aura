@@ -4,9 +4,10 @@
 //!   [0x07, canal, id, dados...]  id_custom_set_value
 //!   [0x08, canal, id]            id_custom_get_value (resposta ecoa o valor)
 //!   id 1 = brilho (0..4; o firmware limita a 4 e valores maiores apagam o teclado)
-//!   id 2 = efeito (6 = LIGHT_MODE, cor única estática)
+//!   id 2 = efeito (lista em `EFFECT_*`; 6 = LIGHT_MODE, cor única)
 //!   id 3 = velocidade (0..4)
 //!   id 4 = cor [hue 0..255, sat 0..255]
+//! Os valores ficam em RAM no teclado: pode-se escrever muitas vezes sem desgaste.
 
 use hidapi::{HidApi, HidDevice};
 
@@ -20,21 +21,52 @@ const VIA_USAGE: u16 = 0x61;
 const CMD_SET: u8 = 0x07;
 const CMD_GET: u8 = 0x08;
 const CH_RGB_MATRIX: u8 = 3;
+const ID_BRIGHTNESS: u8 = 1;
 const ID_EFFECT: u8 = 2;
+const ID_SPEED: u8 = 3;
 const ID_COLOR: u8 = 4;
-const EFFECT_STATIC: u8 = 6;
 const READ_TIMEOUT_MS: i32 = 300;
 
+/// Efeitos nativos do firmware (lista completa no JSON do VIA do teclado).
+pub const EFFECT_OFF: u8 = 0;
+pub const EFFECT_BREATHE: u8 = 5;
+pub const EFFECT_LIGHT: u8 = 6;
+pub const EFFECT_STARRY: u8 = 10;
+/// Degradê de cores atravessando o teclado (medido: é o "arco-íris" real; WAVE é onda de uma cor só).
+pub const EFFECT_TRAVERSE: u8 = 12;
+pub const BRIGHTNESS_MAX: u8 = 4;
+pub const SPEED_MAX: u8 = 4;
+
 const T: &str = "gmk104.keyboard";
+
+/// O que o teclado deve mostrar.
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub struct Target {
+    pub effect: u8,
+    pub hue: u8,
+    pub sat: u8,
+    /// Velocidade do efeito nativo (0..4); None = não mexer.
+    pub speed: Option<u8>,
+    /// Brilho (0..4); None = não mexer (fica o ajuste do usuário).
+    pub brightness: Option<u8>,
+}
+
+impl Target {
+    pub fn solid(hs: (u8, u8)) -> Self {
+        Self { effect: EFFECT_LIGHT, hue: hs.0, sat: hs.1, speed: None, brightness: None }
+    }
+}
 
 pub struct Gmk104 {
     api: Option<HidApi>,
     dev: Option<HidDevice>,
+    /// Último alvo confirmado pelo teclado (None = desconhecido, reenviar tudo).
+    cur: Option<Target>,
 }
 
 impl Gmk104 {
     pub fn new() -> Self {
-        Self { api: None, dev: None }
+        Self { api: None, dev: None, cur: None }
     }
 
     pub fn connected(&self) -> bool {
@@ -51,6 +83,7 @@ impl Gmk104 {
 
     /// Procura a interface VIA do teclado e abre. `false` se não está conectado.
     pub fn connect(&mut self) -> bool {
+        self.cur = None;
         let api = match self.api() {
             Ok(a) => a,
             Err(e) => {
@@ -94,6 +127,7 @@ impl Gmk104 {
 
     pub fn close(&mut self) {
         self.dev = None;
+        self.cur = None;
     }
 
     fn xfer(&self, payload: &[u8]) -> Result<Option<[u8; 32]>, String> {
@@ -116,20 +150,62 @@ impl Gmk104 {
         Ok(self.xfer(&[CMD_GET, CH_RGB_MATRIX, id])?.map(|r| r[3]))
     }
 
-    /// Aplica a cor (e o efeito estático, se preciso). Reconecta se necessário.
+    /// Nível de brilho atual do teclado (0..4), se conectado e respondendo.
+    pub fn brightness(&mut self) -> Option<u8> {
+        if self.dev.is_none() && !self.connect() {
+            return None;
+        }
+        match self.get_value(ID_BRIGHTNESS) {
+            Ok(v) => v.map(|b| b.min(BRIGHTNESS_MAX)),
+            Err(e) => {
+                warn!(T, "erro lendo brilho ({e}); vou reconectar");
+                self.close();
+                None
+            }
+        }
+    }
+
+    /// Leva o teclado ao alvo, enviando só o que mudou. Com `verify`, confere o efeito no teclado
+    /// (o usuário pode ter trocado por Fn) e reenvia a cor. Reconecta se necessário.
     /// `false` se o teclado não respondeu; o chamador tenta de novo no próximo ciclo.
-    pub fn apply(&mut self, hue: u8, sat: u8) -> bool {
+    pub fn apply(&mut self, t: &Target, verify: bool) -> bool {
         if self.dev.is_none() && !self.connect() {
             return false;
         }
+        let cur = self.cur;
         let r = (|| -> Result<bool, String> {
-            if self.get_value(ID_EFFECT)? != Some(EFFECT_STATIC) {
-                self.set_value(ID_EFFECT, &[EFFECT_STATIC])?;
+            let mut ok = true;
+            let mut effect_changed = cur.map_or(true, |c| c.effect != t.effect);
+            if verify && !effect_changed && self.get_value(ID_EFFECT)? != Some(t.effect) {
+                effect_changed = true;
             }
-            self.set_value(ID_COLOR, &[hue, sat])
+            if effect_changed {
+                ok &= self.set_value(ID_EFFECT, &[t.effect])?;
+            }
+            if let Some(sp) = t.speed {
+                if effect_changed || cur.and_then(|c| c.speed) != Some(sp) {
+                    ok &= self.set_value(ID_SPEED, &[sp.min(SPEED_MAX)])?;
+                }
+            }
+            if verify || effect_changed || cur.map_or(true, |c| (c.hue, c.sat) != (t.hue, t.sat)) {
+                ok &= self.set_value(ID_COLOR, &[t.hue, t.sat])?;
+            }
+            if let Some(b) = t.brightness {
+                if cur.and_then(|c| c.brightness) != Some(b) {
+                    ok &= self.set_value(ID_BRIGHTNESS, &[b.min(BRIGHTNESS_MAX)])?;
+                }
+            }
+            Ok(ok)
         })();
         match r {
-            Ok(ok) => ok,
+            Ok(true) => {
+                self.cur = Some(*t);
+                true
+            }
+            Ok(false) => {
+                self.cur = None;
+                false
+            }
             Err(e) => {
                 warn!(T, "erro de comunicação com o teclado ({e}); vou reconectar");
                 self.close();

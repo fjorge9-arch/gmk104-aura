@@ -120,11 +120,13 @@ fn nid_base(hwnd: HWND) -> NOTIFYICONDATAW {
 
 fn build_tip(s: &status::Status) -> String {
     let cor = match s.color {
-        Some(c) if s.keyboard_connected => format!("{} ({})", status::color_name(c), s.source),
+        Some(c) if s.keyboard_connected => status::color_name(c).to_string(),
+        _ if s.effect == "Escuro" => "apagado".to_string(),
         _ => "—".to_string(),
     };
     let kb = if s.keyboard_connected { "conectado" } else { "não encontrado" };
-    format!("gmk104-aura\nTeclado: {kb}\nCor: {cor}")
+    let efeito = if s.effect.is_empty() { "—" } else { s.effect };
+    format!("gmk104-aura\nTeclado: {kb}\nEfeito: {efeito}\nCor: {cor}")
 }
 
 /// Atualiza ícone e tooltip se algo mudou. Chamado pelo timer.
@@ -187,8 +189,9 @@ unsafe fn show_menu(hwnd: HWND) {
     let kb = if s.keyboard_connected { "Teclado GMK104: conectado" } else { "Teclado GMK104: não encontrado" };
     AppendMenuW(menu, MF_STRING | MF_GRAYED, ID_STATUS, wide(kb).as_ptr());
     let cor = match s.color {
-        Some(c) if s.keyboard_connected => format!("Cor: {} — {}", status::color_name(c), s.source),
+        Some(c) if s.keyboard_connected => format!("Efeito: {} — {} ({})", s.effect, status::color_name(c), s.source),
         _ if !s.profile_ok => "Perfil do Aura não encontrado".to_string(),
+        _ if s.effect == "Escuro" => "Efeito: Escuro — apagado".to_string(),
         _ => "Cor: aguardando".to_string(),
     };
     AppendMenuW(menu, MF_STRING | MF_GRAYED, ID_COLOR, wide(&cor).as_ptr());

@@ -1,0 +1,318 @@
+<root>
+    <header>AURA_3.0</header>
+    <performance>1</performance>
+    <performanceLevel>0</performanceLevel>
+    <version>1.0</version>
+    <effectProvider>
+        <period>2000</period>
+        <queue>
+            <effect key="RainbowSingleEff0">
+                <viewport>RainbowSingleEff0</viewport>
+                <trigger>OneTime</trigger>
+                <delay>0</delay>
+                <duration>-1</duration>
+                <layer>0</layer>
+            </effect>
+            <effect key="RainbowSingleEff1">
+                <viewport>RainbowSingleEff1</viewport>
+                <trigger>OneTime</trigger>
+                <delay>0</delay>
+                <duration>-1</duration>
+                <layer>0</layer>
+            </effect>
+            <effect key="RainbowSingleEff2">
+                <viewport>RainbowSingleEff2</viewport>
+                <trigger>OneTime</trigger>
+                <delay>0</delay>
+                <duration>-1</duration>
+                <layer>0</layer>
+            </effect>
+            <effect key="RainbowSingleEff30">
+                <viewport>RainbowSingleEff30</viewport>
+                <trigger>OneTime</trigger>
+                <delay>0</delay>
+                <duration>-1</duration>
+                <layer>0</layer>
+            </effect>
+            <effect key="RainbowSingleEff31">
+                <viewport>RainbowSingleEff31</viewport>
+                <trigger>OneTime</trigger>
+                <delay>0</delay>
+                <duration>-1</duration>
+                <layer>0</layer>
+            </effect>
+        </queue>
+    </effectProvider>
+    <viewport>
+        <group key="RainbowSingleEff0">
+            <device>
+                <model>ROG STRIX X570-E GAMING</model>
+                <csv>ROG STRIX X570-E GAMING</csv>
+                <type>Mainboard_Master</type>
+                <location>
+                    <x>0</x>
+                    <y>0</y>
+                </location>
+                <usage>
+                    <led key="-1"/>
+                </usage>
+            </device>
+        </group>
+        <group key="RainbowSingleEff1">
+            <device>
+                <model>RTX 3080</model>
+                <csv>RTX 3080</csv>
+                <type>VGA card</type>
+                <location>
+                    <x>0</x>
+                    <y>0</y>
+                </location>
+                <usage>
+                    <led key="-1"/>
+                </usage>
+            </device>
+        </group>
+        <group key="RainbowSingleEff2">
+            <device>
+                <model>Unkown</model>
+                <csv>Unkown</csv>
+                <type>DIMM</type>
+                <location>
+                    <x>0</x>
+                    <y>0</y>
+                </location>
+                <usage>
+                    <led key="-1"/>
+                </usage>
+            </device>
+        </group>
+        <group key="RainbowSingleEff30">
+            <device>
+                <argbid>0</argbid>
+                <ledCount>120</ledCount>
+                <model>AddressableHeader_2</model>
+                <csv>AddressableHeader_2</csv>
+                <type>AddressableStrip</type>
+                <gen>1</gen>
+                <id>0</id>
+                <location>
+                    <x>0</x>
+                    <y>0</y>
+                </location>
+                <usage>
+                    <led key="-1"/>
+                </usage>
+            </device>
+        </group>
+        <group key="RainbowSingleEff31">
+            <device>
+                <argbid>1</argbid>
+                <ledCount>120</ledCount>
+                <model>AddressableHeader_2</model>
+                <csv>AddressableHeader_2</csv>
+                <type>AddressableStrip</type>
+                <gen>1</gen>
+                <id>0</id>
+                <location>
+                    <x>0</x>
+                    <y>0</y>
+                </location>
+                <usage>
+                    <led key="-1"/>
+                </usage>
+            </device>
+        </group>
+    </viewport>
+    <effectList>
+        <effect key="RainbowSingleEff0">
+            <viewportTransform>
+                <rotate>
+                    <x>0</x>
+                    <y>0</y>
+                    <angle>0</angle>
+                </rotate>
+                <balance>0</balance>
+                <method key="OrthogonaProject">
+                    <input key="0">0</input>
+                </method>
+            </viewportTransform>
+            <waveList>
+                <wave>
+                    <type>SawToothWave</type>
+                    <max>1</max>
+                    <min>0</min>
+                    <length>8</length>
+                    <tile>1</tile>
+                    <freq>0.2</freq>
+                    <phase>16</phase>
+                    <balance>0</balance>
+                    <start>0</start>
+                    <velocity>0</velocity>
+                    <isCycle>0</isCycle>
+                    <bindToSlot>
+                        <slot key="HUE"/>
+                    </bindToSlot>
+                    <customized/>
+                </wave>
+            </waveList>
+            <initColor>
+                <hue>0</hue>
+                <saturation>1</saturation>
+                <lightness>0.5</lightness>
+                <alpha>1</alpha>
+            </initColor>
+        </effect>
+        <effect key="RainbowSingleEff1">
+            <viewportTransform>
+                <rotate>
+                    <x>0</x>
+                    <y>0</y>
+                    <angle>0</angle>
+                </rotate>
+                <balance>0</balance>
+                <method key="OrthogonaProject">
+                    <input key="0">0</input>
+                </method>
+            </viewportTransform>
+            <waveList>
+                <wave>
+                    <type>SawToothWave</type>
+                    <max>1</max>
+                    <min>0</min>
+                    <length>22</length>
+                    <tile>1</tile>
+                    <freq>0.2</freq>
+                    <phase>16</phase>
+                    <balance>0</balance>
+                    <start>0</start>
+                    <velocity>0</velocity>
+                    <isCycle>0</isCycle>
+                    <bindToSlot>
+                        <slot key="HUE"/>
+                    </bindToSlot>
+                    <customized/>
+                </wave>
+            </waveList>
+            <initColor>
+                <hue>0</hue>
+                <saturation>1</saturation>
+                <lightness>0.5</lightness>
+                <alpha>1</alpha>
+            </initColor>
+        </effect>
+        <effect key="RainbowSingleEff2">
+            <viewportTransform>
+                <rotate>
+                    <x>0</x>
+                    <y>0</y>
+                    <angle>0</angle>
+                </rotate>
+                <balance>0</balance>
+                <method key="OrthogonaProject">
+                    <input key="0">0</input>
+                </method>
+            </viewportTransform>
+            <waveList>
+                <wave>
+                    <type>SawToothWave</type>
+                    <max>1</max>
+                    <min>0</min>
+                    <length>10</length>
+                    <tile>1</tile>
+                    <freq>0.2</freq>
+                    <phase>16</phase>
+                    <balance>0</balance>
+                    <start>0</start>
+                    <velocity>0</velocity>
+                    <isCycle>0</isCycle>
+                    <bindToSlot>
+                        <slot key="HUE"/>
+                    </bindToSlot>
+                    <customized/>
+                </wave>
+            </waveList>
+            <initColor>
+                <hue>0</hue>
+                <saturation>1</saturation>
+                <lightness>0.5</lightness>
+                <alpha>1</alpha>
+            </initColor>
+        </effect>
+        <effect key="RainbowSingleEff30">
+            <viewportTransform>
+                <rotate>
+                    <x>0</x>
+                    <y>0</y>
+                    <angle>0</angle>
+                </rotate>
+                <balance>0</balance>
+                <method key="OrthogonaProject">
+                    <input key="0">0</input>
+                </method>
+            </viewportTransform>
+            <waveList>
+                <wave>
+                    <type>SawToothWave</type>
+                    <max>1</max>
+                    <min>0</min>
+                    <length>22</length>
+                    <tile>1</tile>
+                    <freq>0.2</freq>
+                    <phase>16</phase>
+                    <balance>0</balance>
+                    <start>0</start>
+                    <velocity>0</velocity>
+                    <isCycle>0</isCycle>
+                    <bindToSlot>
+                        <slot key="HUE"/>
+                    </bindToSlot>
+                    <customized/>
+                </wave>
+            </waveList>
+            <initColor>
+                <hue>0</hue>
+                <saturation>1</saturation>
+                <lightness>0.5</lightness>
+                <alpha>1</alpha>
+            </initColor>
+        </effect>
+        <effect key="RainbowSingleEff31">
+            <viewportTransform>
+                <rotate>
+                    <x>0</x>
+                    <y>0</y>
+                    <angle>0</angle>
+                </rotate>
+                <balance>0</balance>
+                <method key="OrthogonaProject">
+                    <input key="0">0</input>
+                </method>
+            </viewportTransform>
+            <waveList>
+                <wave>
+                    <type>SawToothWave</type>
+                    <max>1</max>
+                    <min>0</min>
+                    <length>22</length>
+                    <tile>1</tile>
+                    <freq>0.2</freq>
+                    <phase>16</phase>
+                    <balance>0</balance>
+                    <start>0</start>
+                    <velocity>0</velocity>
+                    <isCycle>0</isCycle>
+                    <bindToSlot>
+                        <slot key="HUE"/>
+                    </bindToSlot>
+                    <customized/>
+                </wave>
+            </waveList>
+            <initColor>
+                <hue>0</hue>
+                <saturation>1</saturation>
+                <lightness>0.5</lightness>
+                <alpha>1</alpha>
+            </initColor>
+        </effect>
+    </effectList>
+</root>

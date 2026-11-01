@@ -5,11 +5,12 @@ use std::sync::Mutex;
 
 #[derive(Clone, Debug, Default)]
 pub struct Status {
-    /// Última cor enviada ao teclado (hue, sat) em 0..255.
+    /// Última cor enviada ao teclado (hue, sat) em 0..255; None = apagado/desconhecido.
     pub color: Option<(u8, u8)>,
     pub keyboard_connected: bool,
-    pub smart: bool,
-    /// Descrição curta da fonte da cor ("log do Aura", "cor base do perfil", ...).
+    /// Nome do efeito ativo na placa ("Smart", "Intermitente", ...).
+    pub effect: &'static str,
+    /// Como o teclado está reproduzindo ("efeito nativo", "animado pelo programa", ...).
     pub source: &'static str,
     pub profile_ok: bool,
 }
@@ -17,7 +18,7 @@ pub struct Status {
 pub static STATUS: Mutex<Status> = Mutex::new(Status {
     color: None,
     keyboard_connected: false,
-    smart: false,
+    effect: "",
     source: "",
     profile_ok: false,
 });

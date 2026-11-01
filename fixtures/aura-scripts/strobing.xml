@@ -1,0 +1,306 @@
+<root>
+    <header>AURA_3.0</header>
+    <performance>1</performance>
+    <performanceLevel>0</performanceLevel>
+    <version>1.0</version>
+    <effectProvider>
+        <period>0</period>
+        <queue>
+            <effect key="StrobingSingleEff0">
+                <viewport>StrobingSingleEff0</viewport>
+                <trigger>OneTime</trigger>
+                <delay>0</delay>
+                <duration>-1</duration>
+                <layer>0</layer>
+            </effect>
+            <effect key="StrobingSingleEff1">
+                <viewport>StrobingSingleEff1</viewport>
+                <trigger>OneTime</trigger>
+                <delay>0</delay>
+                <duration>-1</duration>
+                <layer>0</layer>
+            </effect>
+            <effect key="StrobingSingleEff2">
+                <viewport>StrobingSingleEff2</viewport>
+                <trigger>OneTime</trigger>
+                <delay>0</delay>
+                <duration>-1</duration>
+                <layer>0</layer>
+            </effect>
+            <effect key="StrobingSingleEff30">
+                <viewport>StrobingSingleEff30</viewport>
+                <trigger>OneTime</trigger>
+                <delay>0</delay>
+                <duration>-1</duration>
+                <layer>0</layer>
+            </effect>
+            <effect key="StrobingSingleEff31">
+                <viewport>StrobingSingleEff31</viewport>
+                <trigger>OneTime</trigger>
+                <delay>0</delay>
+                <duration>-1</duration>
+                <layer>0</layer>
+            </effect>
+        </queue>
+    </effectProvider>
+    <viewport>
+        <group key="StrobingSingleEff0">
+            <device>
+                <model>ROG STRIX X570-E GAMING</model>
+                <csv>ROG STRIX X570-E GAMING</csv>
+                <type>Mainboard_Master</type>
+                <location>
+                    <x>0</x>
+                    <y>0</y>
+                </location>
+                <usage>
+                    <led key="-1"/>
+                </usage>
+            </device>
+        </group>
+        <group key="StrobingSingleEff1">
+            <device>
+                <model>RTX 3080</model>
+                <csv>RTX 3080</csv>
+                <type>VGA card</type>
+                <location>
+                    <x>0</x>
+                    <y>0</y>
+                </location>
+                <usage>
+                    <led key="-1"/>
+                </usage>
+            </device>
+        </group>
+        <group key="StrobingSingleEff2">
+            <device>
+                <model>Unkown</model>
+                <csv>Unkown</csv>
+                <type>DIMM</type>
+                <location>
+                    <x>0</x>
+                    <y>0</y>
+                </location>
+                <usage>
+                    <led key="-1"/>
+                </usage>
+            </device>
+        </group>
+        <group key="StrobingSingleEff30">
+            <device>
+                <argbid>0</argbid>
+                <model>AddressableHeader_2</model>
+                <csv>AddressableHeader_2</csv>
+                <type>AddressableStrip</type>
+                <gen>1</gen>
+                <id>0</id>
+                <location>
+                    <x>0</x>
+                    <y>0</y>
+                </location>
+                <usage>
+                    <led key="-1"/>
+                </usage>
+            </device>
+        </group>
+        <group key="StrobingSingleEff31">
+            <device>
+                <argbid>1</argbid>
+                <model>AddressableHeader_2</model>
+                <csv>AddressableHeader_2</csv>
+                <type>AddressableStrip</type>
+                <gen>1</gen>
+                <id>0</id>
+                <location>
+                    <x>0</x>
+                    <y>0</y>
+                </location>
+                <usage>
+                    <led key="-1"/>
+                </usage>
+            </device>
+        </group>
+    </viewport>
+    <effectList>
+        <effect key="StrobingSingleEff0">
+            <viewportTransform>
+                <rotate>
+                    <x>0</x>
+                    <y>0</y>
+                    <angle>0</angle>
+                </rotate>
+                <balance>0</balance>
+                <method key="point"/>
+            </viewportTransform>
+            <waveList>
+                <wave>
+                    <type>SawToothWave</type>
+                    <max>1</max>
+                    <min>0</min>
+                    <length>23</length>
+                    <tile>0</tile>
+                    <freq>2.4</freq>
+                    <phase>0</phase>
+                    <balance>0</balance>
+                    <start>0</start>
+                    <velocity>0</velocity>
+                    <isCycle>0</isCycle>
+                    <bindToSlot>
+                        <slot key="ALPHA"/>
+                    </bindToSlot>
+                    <customized/>
+                </wave>
+            </waveList>
+            <initColor>
+                <hue>0.000000</hue>
+                <saturation>1.000000</saturation>
+                <lightness>0.500000</lightness>
+                <alpha>1</alpha>
+            </initColor>
+        </effect>
+        <effect key="StrobingSingleEff1">
+            <viewportTransform>
+                <rotate>
+                    <x>0</x>
+                    <y>0</y>
+                    <angle>0</angle>
+                </rotate>
+                <balance>0</balance>
+                <method key="point"/>
+            </viewportTransform>
+            <waveList>
+                <wave>
+                    <type>SawToothWave</type>
+                    <max>1</max>
+                    <min>0</min>
+                    <length>23</length>
+                    <tile>0</tile>
+                    <freq>2.4</freq>
+                    <phase>0</phase>
+                    <balance>0</balance>
+                    <start>0</start>
+                    <velocity>0</velocity>
+                    <isCycle>0</isCycle>
+                    <bindToSlot>
+                        <slot key="ALPHA"/>
+                    </bindToSlot>
+                    <customized/>
+                </wave>
+            </waveList>
+            <initColor>
+                <hue>0.000000</hue>
+                <saturation>1.000000</saturation>
+                <lightness>0.500000</lightness>
+                <alpha>1</alpha>
+            </initColor>
+        </effect>
+        <effect key="StrobingSingleEff2">
+            <viewportTransform>
+                <rotate>
+                    <x>0</x>
+                    <y>0</y>
+                    <angle>0</angle>
+                </rotate>
+                <balance>0</balance>
+                <method key="point"/>
+            </viewportTransform>
+            <waveList>
+                <wave>
+                    <type>SawToothWave</type>
+                    <max>1</max>
+                    <min>0</min>
+                    <length>23</length>
+                    <tile>0</tile>
+                    <freq>2.4</freq>
+                    <phase>0</phase>
+                    <balance>0</balance>
+                    <start>0</start>
+                    <velocity>0</velocity>
+                    <isCycle>0</isCycle>
+                    <bindToSlot>
+                        <slot key="ALPHA"/>
+                    </bindToSlot>
+                    <customized/>
+                </wave>
+            </waveList>
+            <initColor>
+                <hue>0.000000</hue>
+                <saturation>1.000000</saturation>
+                <lightness>0.500000</lightness>
+                <alpha>1</alpha>
+            </initColor>
+        </effect>
+        <effect key="StrobingSingleEff30">
+            <viewportTransform>
+                <rotate>
+                    <x>0</x>
+                    <y>0</y>
+                    <angle>0</angle>
+                </rotate>
+                <balance>0</balance>
+                <method key="point"/>
+            </viewportTransform>
+            <waveList>
+                <wave>
+                    <type>SawToothWave</type>
+                    <max>1</max>
+                    <min>0</min>
+                    <length>23</length>
+                    <tile>0</tile>
+                    <freq>2.4</freq>
+                    <phase>0</phase>
+                    <balance>0</balance>
+                    <start>0</start>
+                    <velocity>0</velocity>
+                    <isCycle>0</isCycle>
+                    <bindToSlot>
+                        <slot key="ALPHA"/>
+                    </bindToSlot>
+                    <customized/>
+                </wave>
+            </waveList>
+            <initColor>
+                <hue>0.000000</hue>
+                <saturation>1.000000</saturation>
+                <lightness>0.500000</lightness>
+                <alpha>1</alpha>
+            </initColor>
+        </effect>
+        <effect key="StrobingSingleEff31">
+            <viewportTransform>
+                <rotate>
+                    <x>0</x>
+                    <y>0</y>
+                    <angle>0</angle>
+                </rotate>
+                <balance>0</balance>
+                <method key="point"/>
+            </viewportTransform>
+            <waveList>
+                <wave>
+                    <type>SawToothWave</type>
+                    <max>1</max>
+                    <min>0</min>
+                    <length>23</length>
+                    <tile>0</tile>
+                    <freq>2.4</freq>
+                    <phase>0</phase>
+                    <balance>0</balance>
+                    <start>0</start>
+                    <velocity>0</velocity>
+                    <isCycle>0</isCycle>
+                    <bindToSlot>
+                        <slot key="ALPHA"/>
+                    </bindToSlot>
+                    <customized/>
+                </wave>
+            </waveList>
+            <initColor>
+                <hue>0.000000</hue>
+                <saturation>1.000000</saturation>
+                <lightness>0.500000</lightness>
+                <alpha>1</alpha>
+            </initColor>
+        </effect>
+    </effectList>
+</root>

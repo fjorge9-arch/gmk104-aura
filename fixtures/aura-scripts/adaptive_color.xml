@@ -1,0 +1,191 @@
+<root>
+    <header>AURA_3.0</header>
+    <performance>1</performance>
+    <performanceLevel>0</performanceLevel>
+    <version>1.0</version>
+    <effectProvider>
+        <period>2000</period>
+        <queue>
+            <effect key="screentestSingleEff0">
+                <viewport>screentestSingleEff0</viewport>
+                <trigger>OneTime</trigger>
+                <delay>0</delay>
+                <duration>-1</duration>
+                <layer>0</layer>
+            </effect>
+            <effect key="screentestSingleEff1">
+                <viewport>screentestSingleEff1</viewport>
+                <trigger>OneTime</trigger>
+                <delay>0</delay>
+                <duration>-1</duration>
+                <layer>0</layer>
+            </effect>
+            <effect key="screentestSingleEff2">
+                <viewport>screentestSingleEff2</viewport>
+                <trigger>OneTime</trigger>
+                <delay>0</delay>
+                <duration>-1</duration>
+                <layer>0</layer>
+            </effect>
+            <effect key="screentestSingleEff30">
+                <viewport>screentestSingleEff30</viewport>
+                <trigger>OneTime</trigger>
+                <delay>0</delay>
+                <duration>-1</duration>
+                <layer>0</layer>
+            </effect>
+            <effect key="screentestSingleEff31">
+                <viewport>screentestSingleEff31</viewport>
+                <trigger>OneTime</trigger>
+                <delay>0</delay>
+                <duration>-1</duration>
+                <layer>0</layer>
+            </effect>
+        </queue>
+    </effectProvider>
+    <viewport>
+        <group key="screentestSingleEff0">
+            <device>
+                <model>ROG STRIX X570-E GAMING</model>
+                <csv>ROG STRIX X570-E GAMING</csv>
+                <type>Mainboard_Master</type>
+                <location>
+                    <x>0</x>
+                    <y>0</y>
+                </location>
+                <usage>
+                    <led key="-1"/>
+                </usage>
+            </device>
+        </group>
+        <group key="screentestSingleEff1">
+            <device>
+                <model>RTX 3080</model>
+                <csv>RTX 3080</csv>
+                <type>VGA card</type>
+                <location>
+                    <x>0</x>
+                    <y>0</y>
+                </location>
+                <usage>
+                    <led key="-1"/>
+                </usage>
+            </device>
+        </group>
+        <group key="screentestSingleEff2">
+            <device>
+                <model>Unkown</model>
+                <csv>Unkown</csv>
+                <type>DIMM</type>
+                <location>
+                    <x>0</x>
+                    <y>0</y>
+                </location>
+                <usage>
+                    <led key="-1"/>
+                </usage>
+            </device>
+        </group>
+        <group key="screentestSingleEff30">
+            <device>
+                <argbid>0</argbid>
+                <model>AddressableHeader_2</model>
+                <csv>AddressableHeader_2</csv>
+                <type>AddressableStrip</type>
+                <gen>1</gen>
+                <id>0</id>
+                <location>
+                    <x>0</x>
+                    <y>0</y>
+                </location>
+                <usage>
+                    <led key="-1"/>
+                </usage>
+            </device>
+        </group>
+        <group key="screentestSingleEff31">
+            <device>
+                <argbid>1</argbid>
+                <model>AddressableHeader_2</model>
+                <csv>AddressableHeader_2</csv>
+                <type>AddressableStrip</type>
+                <gen>1</gen>
+                <id>0</id>
+                <location>
+                    <x>0</x>
+                    <y>0</y>
+                </location>
+                <usage>
+                    <led key="-1"/>
+                </usage>
+            </device>
+        </group>
+    </viewport>
+    <effectList>
+        <screen key="screentestSingleEff0">
+            <x>0</x>
+            <y>0</y>
+            <width>1920</width>
+            <height>1200</height>
+            <jumpX>0</jumpX>
+            <jumpY>0</jumpY>
+            <type>3</type>
+            <Repeat>1</Repeat>
+            <OffsetX>0</OffsetX>
+            <OffsetY>0</OffsetY>
+            <FullLayer>1</FullLayer>
+        </screen>
+        <screen key="screentestSingleEff1">
+            <x>0</x>
+            <y>0</y>
+            <width>1920</width>
+            <height>1200</height>
+            <jumpX>0</jumpX>
+            <jumpY>0</jumpY>
+            <type>3</type>
+            <Repeat>1</Repeat>
+            <OffsetX>0</OffsetX>
+            <OffsetY>0</OffsetY>
+            <FullLayer>1</FullLayer>
+        </screen>
+        <screen key="screentestSingleEff2">
+            <x>0</x>
+            <y>0</y>
+            <width>1920</width>
+            <height>1200</height>
+            <jumpX>0</jumpX>
+            <jumpY>0</jumpY>
+            <type>3</type>
+            <Repeat>1</Repeat>
+            <OffsetX>0</OffsetX>
+            <OffsetY>0</OffsetY>
+            <FullLayer>1</FullLayer>
+        </screen>
+        <screen key="screentestSingleEff30">
+            <x>0</x>
+            <y>0</y>
+            <width>1920</width>
+            <height>1200</height>
+            <jumpX>0</jumpX>
+            <jumpY>0</jumpY>
+            <type>3</type>
+            <Repeat>1</Repeat>
+            <OffsetX>0</OffsetX>
+            <OffsetY>0</OffsetY>
+            <FullLayer>1</FullLayer>
+        </screen>
+        <screen key="screentestSingleEff31">
+            <x>0</x>
+            <y>0</y>
+            <width>1920</width>
+            <height>1200</height>
+            <jumpX>0</jumpX>
+            <jumpY>0</jumpY>
+            <type>3</type>
+            <Repeat>1</Repeat>
+            <OffsetX>0</OffsetX>
+            <OffsetY>0</OffsetY>
+            <FullLayer>1</FullLayer>
+        </screen>
+    </effectList>
+</root>

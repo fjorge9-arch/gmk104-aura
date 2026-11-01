@@ -50,8 +50,24 @@ and, optionally, the `%LOCALAPPDATA%\gmk104-aura` folder (just a log and a marke
 - **Smart** (thermal) mode → green / yellow / red according to the band Aura itself picked, using the
   colors and thresholds of your profile (default 65 °C / 85 °C). It switches by band, no gradient,
   exactly like Aura; with the CPU sitting on a threshold, board and keyboard flip together.
-- **Animated effects** (rainbow, breathing, music...) are not reproduced frame by frame: the keyboard
-  gets the effect's base color.
+- **Animated effects** are imitated, not streamed frame by frame (LightingService exposes no frames).
+  Each Aura effect maps to the closest thing the keyboard can do, with speeds calibrated by webcam on
+  a ROG STRIX X570-E:
+
+  | Aura effect | On the keyboard |
+  |---|---|
+  | Static | same solid color |
+  | Breathing | native breathing effect, same color, closest of 5 speed levels (Aura's `freq` is in Hz) |
+  | Color cycle | hue rotation computed by the program: 12.5 s per revolution, starts at green 2.5 s after the switch, so it stays in step with the board |
+  | Rainbow | native color-gradient effect (TRAVERSE); the board takes 14.5 s per revolution, the keyboard's slowest level 8 s |
+  | Strobing | brightness pulsed by the program at the script frequency (2.4 Hz); your brightness level is restored afterwards |
+  | Starry night | native starry effect, same color, slowest level |
+  | Dark (off) | keyboard off |
+  | Smart | by CPU-temperature band, from the LightingService log |
+  | Music, Immersion, Adaptive color, downloaded effects (Halloween...) | not reproducible (live audio/screen input): the keyboard keeps its last color |
+
+  Phase is never guaranteed for native keyboard effects (the keyboard runs its own animation); the
+  color cycle is the exception, since both sides start from a known point.
 - Keyboard **brightness** is never changed; use the keyboard's Fn keys.
 - If you switch the keyboard effect with Fn, the program restores the single-color effect on the next
   refresh (5 s).
@@ -67,9 +83,14 @@ LightingService (Aura)                          gmk104-aura                     
                                              │    sends only on change)
 ```
 
-1. **Profile**: `C:\Program Files (x86)\LightingService\LastProfile.xml` and `script\LastScript.xml`
-   hold the current mode (key `100` = Smart), the board's base color and, in Smart mode, the thresholds
-   and the three band colors.
+1. **Profile and script**: `C:\Program Files (x86)\LightingService\LastProfile.xml` holds the mode
+   (key `100` = effect described by a script; other values = fixed hardware mode, black = off) and the
+   board's base color. `script\LastScript.xml` is the effect itself, written as an "AURA 3.0" wave
+   script: the viewport group whose device type is `Mainboard_Master` points to an `effectList` entry
+   whose key prefix names the effect (`StaticSingleEff`, `BreathSingleEff`, `ColorCycleSingleEff`,
+   `RainbowSingleEff`, `StrobingSingleEff`, `StarSingleEff`, `Smartmode`...) and whose `wave` carries
+   the frequency (Hz) and channel (`ALPHA` = brightness, `HUE`). Captured samples of every effect live in
+   `fixtures/aura-scripts/`.
 2. **Band color**: in Smart mode LightingService writes to the world-readable log
    `%ProgramData%\ASUS\ARMOURY CRATE Diagnosis\LightingService\LightingService.log` a line
    `[ParseInitColor] parsed value => hue=…, saturation=…, lightness=…` every time the band changes.
@@ -98,6 +119,15 @@ The binary lands in `target\release\gmk104-aura.exe`. Command-line options, hand
 Layout: `src/keyboard.rs` (VIA HID), `src/aura_profile.rs` (profile XML), `src/aura_log.rs`
 (LightingService log), `src/follower.rs` (main loop), `src/tray.rs` (tray icon, plain Win32),
 `src/autostart.rs` (Run key), `src/logger.rs`.
+
+### Calibration tools (`fixtures/calib/`)
+
+Python + OpenCV scripts used to measure speeds with a webcam, kept so other boards/keyboards can be
+calibrated the same way: `snapshot.py` (pick regions), `measure.py` (hue over time, detects the
+profile change), `measure_brightness.py` (breathing period), `measure_keyboard_breath.py` /
+`measure_keyboard_wave.py` (period of each keyboard speed level for a given native effect),
+`survey_keyboard_effects.py` (what each of the 19 native effects does). `fixtures/run_fixtures.ps1`
+replays every captured Aura script on the keyboard. Measured constants are in `src/follower.rs`.
 
 ### Python version (reference)
 
