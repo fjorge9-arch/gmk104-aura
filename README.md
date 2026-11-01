@@ -1,129 +1,134 @@
 # gmk104-aura
 
-Faz o teclado **ZUOYA GMK104** acompanhar a cor que o **ASUS Aura Sync / Armoury Crate** aplica na
-placa-mãe. Se o Aura está no modo **Smart** (cor pela temperatura da CPU), o teclado fica verde,
-amarelo ou vermelho junto com a placa; se está numa cor fixa, o teclado copia a cor.
+[🇧🇷 Português](README.pt-BR.md) · 🇺🇸 English
 
-Um único `.exe` de ~350 KB, sem instalador, sem administrador, sem janela: só um ícone redondo ao lado
-do relógio mostrando a cor atual do teclado.
+Makes the **ZUOYA GMK104** keyboard follow the color that **ASUS Aura Sync / Armoury Crate** applies to
+the motherboard. When Aura is in **Smart** mode (color by CPU temperature), the keyboard turns green,
+yellow or red together with the board; when Aura shows a fixed color, the keyboard copies it.
 
-> O Armoury Crate e os outros plugins (Corsair, etc.) continuam intocados. O programa apenas **lê** o
-> que o Aura já decidiu e repete no teclado.
+A single ~350 KB `.exe`: no installer, no admin rights, no window. Just a round icon next to the clock
+showing the keyboard's current color.
 
-## Instalação (usuário comum)
+> Armoury Crate and other plugins (Corsair, etc.) are left untouched. The program only **reads** what
+> Aura has already decided and repeats it on the keyboard.
 
-1. Baixe `gmk104-aura.exe` na página de [Releases](../../releases/latest).
-2. Coloque-o numa pasta definitiva (por exemplo `C:\Users\você\gmk104-aura\`) e dê dois cliques.
-3. Na primeira vez ele pergunta **"Iniciar junto com o Windows?"**. Responda **Sim** e pronto.
+## Install (regular users)
 
-A partir daí o programa sobe sozinho a cada logon. O ícone ao lado do relógio mostra a cor atual;
-clique nele para ver o menu:
+1. Download `gmk104-aura.exe` from the [Releases](../../releases/latest) page.
+2. Put it in a permanent folder (e.g. `C:\Users\you\gmk104-aura\`) and double-click it.
+3. The first time it asks **"Start together with Windows?"**. Answer **Yes** and you're done.
 
-| Item | O que faz |
+From then on it starts at every logon. The icon next to the clock shows the current color; click it
+for the menu:
+
+| Item | What it does |
 |---|---|
-| Teclado GMK104: conectado / não encontrado | estado da conexão com o teclado |
-| Cor: verde — modo Smart (log do Aura) | cor atual e de onde ela veio |
-| ☑ Iniciar com o Windows | liga/desliga o início automático (por usuário, sem administrador) |
-| Abrir log | abre `%LOCALAPPDATA%\gmk104-aura\gmk104-aura.log` |
-| Sair | encerra o programa (o teclado fica na última cor) |
+| GMK104 keyboard: connected / not found | connection state |
+| Color: green — Smart mode (Aura log) | current color and where it came from |
+| ☑ Start with Windows | toggles autostart (per user, no admin) |
+| Open log | opens `%LOCALAPPDATA%\gmk104-aura\gmk104-aura.log` |
+| Exit | quits (the keyboard keeps the last color) |
 
-**Aviso do SmartScreen.** O executável não é assinado digitalmente (assinatura custa caro). Na
-primeira execução o Windows pode mostrar "O Windows protegeu o computador": clique em **Mais
-informações → Executar assim mesmo**. O código é aberto, e o `.exe` das Releases é compilado
-automaticamente pelo GitHub Actions a partir deste repositório.
+**SmartScreen warning.** The executable is not code-signed (certificates are expensive). On first
+run Windows may show "Windows protected your PC": click **More info → Run anyway**. The code is open,
+and the `.exe` in Releases is built automatically by GitHub Actions from this repository.
 
-**Desinstalar.** No menu do ícone, desmarque "Iniciar com o Windows" e clique em "Sair". Depois apague
-o `.exe` e, se quiser, a pasta `%LOCALAPPDATA%\gmk104-aura` (só log e um marcador).
+**Uninstall.** Untick "Start with Windows" in the icon menu and click "Exit". Then delete the `.exe`
+and, optionally, the `%LOCALAPPDATA%\gmk104-aura` folder (just a log and a marker file).
 
-## Requisitos
+> The UI is currently in Portuguese (menu, dialogs, log). English strings are planned.
 
-- Windows 10/11 com **Armoury Crate** e **Aura Sync** funcionando (serviço `LightingService` ativo).
-- Teclado **ZUOYA GMK104** (USB `320F:5055`; também aceita o receptor 2.4G `320F:5088`).
-- Nada mais: não precisa de Python, drivers, VIA ou administrador.
+## Requirements
 
-## O que ele segue (e o que não)
+- Windows 10/11 with **Armoury Crate** and **Aura Sync** working (`LightingService` running).
+- **ZUOYA GMK104** keyboard (USB `320F:5055`; the 2.4 GHz receiver `320F:5088` is also accepted).
+- Nothing else: no Python, drivers, VIA or admin rights.
 
-- **Cor fixa** na placa-mãe → mesma cor no teclado.
-- **Modo Smart** (térmico) → verde / amarelo / vermelho conforme a faixa que o próprio Aura escolheu,
-  com as cores e limiares do seu perfil (padrão 65 °C / 85 °C). Muda por faixa, sem gradiente, igual
-  ao Aura; com a CPU em cima do limiar, a placa e o teclado alternam juntos.
-- **Efeitos animados** (arco-íris, respiração, música...) não são reproduzidos quadro a quadro: o
-  teclado recebe a cor base do efeito.
-- O **brilho** do teclado não é alterado; ajuste pelo Fn do próprio teclado.
-- Se você trocar o efeito do teclado por Fn, o programa volta à cor única no próximo reforço (5 s).
-- O teclado continua não aparecendo no Aura Sync, SignalRGB ou OpenRGB.
+## What it follows (and what it doesn't)
 
-## Como funciona (para os curiosos)
+- **Fixed color** on the motherboard → same color on the keyboard.
+- **Smart** (thermal) mode → green / yellow / red according to the band Aura itself picked, using the
+  colors and thresholds of your profile (default 65 °C / 85 °C). It switches by band, no gradient,
+  exactly like Aura; with the CPU sitting on a threshold, board and keyboard flip together.
+- **Animated effects** (rainbow, breathing, music...) are not reproduced frame by frame: the keyboard
+  gets the effect's base color.
+- Keyboard **brightness** is never changed; use the keyboard's Fn keys.
+- If you switch the keyboard effect with Fn, the program restores the single-color effect on the next
+  refresh (5 s).
+- The keyboard still does not show up in Aura Sync, SignalRGB or OpenRGB.
+
+## How it works (for the curious)
 
 ```
 LightingService (Aura)                          gmk104-aura                        GMK104
- LastProfile.xml ───── modo e cor base ──────┐
- LightingService.log ─ cor da faixa (Smart) ─┼─► decide a cor ──VIA Raw HID──► cor
-                                             │   (20 verificações/s,
-                                             │    envia só quando muda)
+ LastProfile.xml ───── mode and base color ──┐
+ LightingService.log ─ band color (Smart) ───┼─► picks the color ──VIA Raw HID──► color
+                                             │   (20 checks/s,
+                                             │    sends only on change)
 ```
 
-1. **Perfil**: `C:\Program Files (x86)\LightingService\LastProfile.xml` e `script\LastScript.xml` dizem
-   o modo atual (key `100` = Smart), a cor base da placa e, no Smart, os limiares e as três cores.
-2. **Cor da faixa**: no Smart, o LightingService escreve no log público
-   `%ProgramData%\ASUS\ARMOURY CRATE Diagnosis\LightingService\LightingService.log` a linha
-   `[ParseInitColor] parsed value => hue=…, saturation=…, lightness=…` toda vez que troca de faixa.
-   O programa acompanha o fim desse arquivo (e os backups `.log.1`–`.log.3` logo após uma rotação).
-   Por isso **não precisa de administrador**: ler a temperatura direto do serviço da ASUS exigiria.
-3. **Teclado**: canal VIA Raw HID (`usage page 0xFF60`), canal 3 (`rgb_matrix`): efeito 6 (cor única)
-   e cor em `hue/sat` 0..255. Só envia quando a cor muda, mais um reforço a cada 5 s, então não desgasta
-   a memória do teclado. Reconecta sozinho se o teclado for desligado e religado.
+1. **Profile**: `C:\Program Files (x86)\LightingService\LastProfile.xml` and `script\LastScript.xml`
+   hold the current mode (key `100` = Smart), the board's base color and, in Smart mode, the thresholds
+   and the three band colors.
+2. **Band color**: in Smart mode LightingService writes to the world-readable log
+   `%ProgramData%\ASUS\ARMOURY CRATE Diagnosis\LightingService\LightingService.log` a line
+   `[ParseInitColor] parsed value => hue=…, saturation=…, lightness=…` every time the band changes.
+   The program tails that file (and the `.log.1`–`.log.3` backups right after a rotation).
+   That is why **no admin rights** are needed: reading the temperature straight from the ASUS service
+   would require them.
+3. **Keyboard**: VIA Raw HID channel (`usage page 0xFF60`), channel 3 (`rgb_matrix`): effect 6 (solid
+   color) and color as `hue/sat` 0..255. It only sends when the color changes, plus a refresh every
+   5 s, so it does not wear the keyboard's memory. Reconnects by itself if the keyboard is unplugged.
 
-Consumo medido: ~5 MB de memória e ~1 % de um núcleo por segundo de CPU, ou menos.
+Measured footprint: ~5 MB of RAM and ~1 % of one core, or less.
 
-## Compilar do código
+## Build from source
 
-Precisa do [Rust](https://rustup.rs) (toolchain MSVC) e das ferramentas de build do Visual Studio
-(a `hidapi` compila um pouco de C; o `rc.exe` do Windows SDK embute o ícone).
+Needs [Rust](https://rustup.rs) (MSVC toolchain) and the Visual Studio build tools (`hidapi` compiles
+a bit of C; `rc.exe` from the Windows SDK embeds the icon).
 
 ```bash
 cargo build --release
 ```
 
-O binário sai em `target\release\gmk104-aura.exe`. Opções de linha de comando, úteis para depurar:
-`-v` (escreve o log também no terminal), `--no-tray` (sem ícone, roda no terminal), `--duration N`
-(encerra após N s), `--fps N`, `--refresh S`.
+The binary lands in `target\release\gmk104-aura.exe`. Command-line options, handy for debugging:
+`-v` (also writes the log to the terminal), `--no-tray` (no icon, runs in the terminal),
+`--duration N` (quits after N s), `--fps N`, `--refresh S`.
 
-Organização: `src/keyboard.rs` (VIA HID), `src/aura_profile.rs` (XML do perfil), `src/aura_log.rs`
-(log do LightingService), `src/follower.rs` (laço), `src/tray.rs` (bandeja, Win32 puro),
-`src/autostart.rs` (chave Run), `src/logger.rs`.
+Layout: `src/keyboard.rs` (VIA HID), `src/aura_profile.rs` (profile XML), `src/aura_log.rs`
+(LightingService log), `src/follower.rs` (main loop), `src/tray.rs` (tray icon, plain Win32),
+`src/autostart.rs` (Run key), `src/logger.rs`.
 
-### Versão Python (referência)
+### Python version (reference)
 
-Em `python/` está a implementação original, usada para descobrir o protocolo. Faz o mesmo, mais uma
-fonte extra de temperatura via COM da ASUS (`aaHM.acpiHmData2`, só funciona elevado). Precisa de
-`pip install -r python/requirements.txt` e roda com `python python/run.py -v`. Os scripts em
-`python/tools/` (atalho/tarefa agendada) ficaram como legado: o `.exe` faz isso sozinho.
+`python/` holds the original implementation, used to discover the protocol. It does the same, plus an
+extra temperature source through the ASUS COM service (`aaHM.acpiHmData2`, elevated only). Needs
+`pip install -r python/requirements.txt` and runs with `python python/run.py -v`. The scripts in
+`python/tools/` (startup shortcut / scheduled task) are legacy: the `.exe` handles that itself.
 
-## Protocolos descobertos
+## Protocols discovered
 
-### VIA Raw HID (usado)
+### VIA Raw HID (used)
 
-Relatórios de 32 bytes (report id 0) na interface `0xFF60/0x61`:
+32-byte reports (report id 0) on interface `0xFF60/0x61`:
 
-| Comando | Bytes | Observação |
+| Command | Bytes | Notes |
 |---|---|---|
-| set valor | `07 03 id dados…` | eco na resposta |
-| get valor | `08 03 id` | valor nos bytes 3.. |
-| id 1 brilho | 0..4 | o firmware limita a 4; valores maiores **apagam** o teclado |
-| id 2 efeito | 6 = cor única | lista completa no JSON do VIA do teclado |
-| id 3 velocidade | 0..4 | |
-| id 4 cor | `hue sat` | 0..255 cada |
+| set value | `07 03 id data…` | echoed in the reply |
+| get value | `08 03 id` | value in bytes 3.. |
+| id 1 brightness | 0..4 | firmware clamps to 4; higher values **turn the keyboard off** |
+| id 2 effect | 6 = solid color | full list in the keyboard's VIA JSON |
+| id 3 speed | 0..4 | |
+| id 4 color | `hue sat` | 0..255 each |
 
-### Protocolo do GMK87 (gmk87-node), também aceito pelo GMK104
+### GMK87 protocol (gmk87-node), also accepted by the GMK104
 
-Interface `usage page 0xFF1C`, report id `0x04`, 64 bytes, checksum de 16 bits = soma dos bytes 3..63
-nos bytes 1..2; cmd no byte 3, tamanho no 4, posição nos 5..7, dados a partir do 8. Leitura da
-configuração: `0x01`, `0x03`×10, `0x02`, `0x05`×12 (dados nos bytes 4..7 da resposta). Escrita:
-`0x01`, `0x06` (48 bytes), `0x02`. Layout: `[1]` efeito, `[2]` brilho, `[6..8]` RGB, `[9]` hue,
-`[21]` winlock, `[35..41]` relógio BCD, `[43..44]` delay de quadro. Grava a configuração inteira
-(provável flash), por isso não é usado.
+Interface `usage page 0xFF1C`, report id `0x04`, 64 bytes, 16-bit checksum = sum of bytes 3..63 in
+bytes 1..2; cmd in byte 3, length in 4, position in 5..7, data from 8. Read config: `0x01`, `0x03`×10,
+`0x02`, `0x05`×12 (data in reply bytes 4..7). Write: `0x01`, `0x06` (48 bytes), `0x02`. Layout: `[1]`
+effect, `[2]` brightness, `[6..8]` RGB, `[9]` hue, `[21]` winlock, `[35..41]` BCD clock, `[43..44]`
+frame delay. It writes the whole config (likely flash), so it is not used.
 
-## Licença
+## License
 
-MIT. Não tem relação com a ASUS nem com a ZUOYA; nomes de produtos pertencem aos seus donos.
+MIT. Not affiliated with ASUS or ZUOYA; product names belong to their owners.
