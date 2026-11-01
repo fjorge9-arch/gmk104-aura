@@ -309,6 +309,9 @@ pub struct AuraWatcher {
     script: PathBuf,
     mtimes: (Option<SystemTime>, Option<SystemTime>),
     pub state: AuraState,
+    /// Instante em que o Aura gravou o estado atual (mtime mais recente dos dois arquivos): é quando a
+    /// placa começou o efeito, e serve de origem de fase para as animações feitas pelo programa.
+    pub changed_at: Option<SystemTime>,
 }
 
 impl AuraWatcher {
@@ -319,6 +322,7 @@ impl AuraWatcher {
             script: dir.join("script").join("LastScript.xml"),
             mtimes: (None, None),
             state: AuraState::default(),
+            changed_at: None,
         }
     }
 
@@ -341,6 +345,10 @@ impl AuraWatcher {
         match parse_profile(&self.profile).and_then(|s| parse_script(s, &self.script)) {
             Ok(st) => {
                 self.mtimes = m;
+                self.changed_at = match m {
+                    (Some(a), Some(b)) => Some(a.max(b)),
+                    (a, b) => a.or(b),
+                };
                 let extra = match &st.effect {
                     Effect::Smart => {
                         let cores: Vec<String> = st.smart_colors.iter().map(|(k, c)| format!("{k}={:?}", c.to_hs255())).collect();

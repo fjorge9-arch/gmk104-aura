@@ -57,7 +57,7 @@ o `.exe` e, se quiser, a pasta `%LOCALAPPDATA%\gmk104-aura` (só log e um marcad
   |---|---|
   | Estático | mesma cor fixa |
   | Intermitente | respiração nativa, mesma cor, o mais próximo dos 5 níveis (a `freq` do Aura é em Hz) |
-  | Ciclo de cor | matiz girando, calculada pelo programa: 12,5 s por volta, começa no verde 2,5 s após a troca, então acompanha a placa |
+  | Ciclo de cor | matiz calculada pelo programa a partir da curva do próprio ciclo da placa, medida por webcam (12,5 s por volta, velocidade não uniforme, fase ancorada no instante em que o Aura gravou o script), então acompanha a placa mesmo após reinícios do programa |
   | Arco-íris | degradê nativo (TRAVERSE); a placa leva 14,5 s por volta, o nível mais lento do teclado 8 s |
   | Estroboscópio | brilho pulsado pelo programa na frequência do script (2,4 Hz); o seu brilho é devolvido depois |
   | Noite estrelada | efeito estrelado nativo, mesma cor, nível mais lento |

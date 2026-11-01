@@ -3,6 +3,9 @@
 import os, sys, time, csv, cv2, numpy as np
 
 PROFILE = r"C:\Program Files (x86)\LightingService\LastProfile.xml"
+SCRIPT = r"C:\Program Files (x86)\LightingService\script\LastScript.xml"
+def _mt():
+    return max(os.path.getmtime(PROFILE), os.path.getmtime(SCRIPT))
 secs = float(sys.argv[1]); out = sys.argv[2]
 rois = [tuple(int(v) for v in a.split(",")) for a in sys.argv[3:]]
 
@@ -10,14 +13,14 @@ cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
 cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1280); cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
 cap.set(cv2.CAP_PROP_AUTO_EXPOSURE, 0.25); cap.set(cv2.CAP_PROP_AUTO_WB, 0)
 time.sleep(1.0)
-t0 = time.perf_counter(); mt0 = os.path.getmtime(PROFILE); changed_at = None; rows = []
+t0 = time.perf_counter(); mt0 = _mt(); changed_at = None; rows = []
 print("gravando...", flush=True)
 while time.perf_counter() - t0 < secs:
     ok, f = cap.read()
     if not ok:
         continue
     t = time.perf_counter() - t0
-    mt = os.path.getmtime(PROFILE)
+    mt = _mt()
     if mt != mt0:
         mt0 = mt
         if changed_at is None:

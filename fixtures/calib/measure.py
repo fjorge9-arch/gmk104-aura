@@ -8,6 +8,9 @@ dos pixels saturados; depois um resumo com período estimado por regressão da m
 import os, sys, time, csv, cv2, numpy as np
 
 PROFILE = r"C:\Program Files (x86)\LightingService\LastProfile.xml"
+SCRIPT = r"C:\Program Files (x86)\LightingService\script\LastScript.xml"
+def _mt():
+    return max(os.path.getmtime(PROFILE), os.path.getmtime(SCRIPT))
 secs = float(sys.argv[1]); out = sys.argv[2]
 rois = [tuple(int(v) for v in a.split(",")) for a in sys.argv[3:]]
 
@@ -30,7 +33,7 @@ def region_color(hsv, roi):
     return mean, float(r[..., 1][m].mean()), float(r[..., 2][m].mean())
 
 t0 = time.perf_counter()
-mt0 = os.path.getmtime(PROFILE)
+mt0 = _mt()
 rows = []
 changed_at = None
 print("gravando... clique no efeito no Armoury Crate agora", flush=True)
@@ -39,7 +42,7 @@ while time.perf_counter() - t0 < secs:
     if not ok:
         continue
     t = time.perf_counter() - t0
-    mt = os.path.getmtime(PROFILE)
+    mt = _mt()
     ch = 0
     if mt != mt0:
         mt0 = mt; ch = 1

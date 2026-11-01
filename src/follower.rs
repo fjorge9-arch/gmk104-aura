@@ -52,8 +52,23 @@ fn speed_for_period(period: f64, table: &[f64; 5]) -> u8 {
 /// controle escalam proporcionalmente.
 const CYCLE_SECONDS_AT_DEFAULT: f64 = 12.5;
 const CYCLE_DEFAULT_FREQ: f64 = 0.02;
-/// A placa começa a girar ~2 s depois de o perfil ser gravado (medido).
-const CYCLE_START_DELAY: f64 = 2.5;
+/// Matiz (graus) da placa ao longo de um ciclo, em 24 passos iguais de fase a partir do vermelho,
+/// medida com webcam: o giro não é uniforme (QuarterSineWave no script): rápido no início, lento no fim.
+const CYCLE_HUE_TABLE: [f64; 25] = [
+    0.0, 24.0, 47.0, 72.0, 95.0, 126.0, 141.0, 148.0, 160.0, 185.0, 215.0, 252.0, 267.0,
+    277.0, 288.0, 294.0, 299.0, 305.0, 314.0, 323.0, 331.0, 338.0, 345.0, 352.0, 360.0,
+];
+/// O ciclo (fase 0 = vermelho) começa este tanto depois de o Aura gravar o script (medido: o verde,
+/// que está em ~19 % do ciclo, aparece 2,5 s após a gravação).
+const CYCLE_RED_OFFSET: f64 = -1.9; // medido: a placa já está girando ~1,9 s antes de o script ser gravado
+
+fn cycle_hue(phase: f64) -> f64 {
+    let p = phase.rem_euclid(1.0) * 24.0;
+    let i = p.floor() as usize;
+    let f = p - i as f64;
+    let (a, b) = (CYCLE_HUE_TABLE[i.min(23)], CYCLE_HUE_TABLE[(i + 1).min(24)]);
+    (a + (b - a) * f) / 360.0
+}
 
 fn cycle_seconds(freq: f64) -> f64 {
     let f = freq.abs().max(0.001);
@@ -146,15 +161,21 @@ pub fn run(cfg: &Config) {
                 // medido na placa: matiz crescente (verde -> ciano -> azul -> rosa -> vermelho -> amarelo),
                 // começando no verde ~2 s depois da gravação do perfil; a cor do script não é usada
                 let dir = if *freq < 0.0 { 1.0 } else { -1.0 };
-                let dt = now.duration_since(anim_t0).as_secs_f64() - CYCLE_START_DELAY;
+                // origem da fase: quando o Aura gravou o script (sobrevive a reinícios do programa)
+                let since_change = aura
+                    .changed_at
+                    .and_then(|c| std::time::SystemTime::now().duration_since(c).ok())
+                    .map(|d| d.as_secs_f64())
+                    .unwrap_or_else(|| now.duration_since(anim_t0).as_secs_f64());
+                let dt = since_change - CYCLE_RED_OFFSET;
                 if dt < 0.0 {
                     // a placa ainda mostra a cor anterior: o teclado também
                     match last_sent {
                         Some(t) => (Target::solid((t.hue, t.sat)), "animado pelo programa"),
-                        None => (Target::solid(Hsl { h: 1.0 / 3.0, s: 1.0, l: 0.5 }.to_hs255()), "animado pelo programa"),
+                        None => (Target::solid(Hsl::RED.to_hs255()), "animado pelo programa"),
                     }
                 } else {
-                    let h = (1.0 / 3.0 + dir * dt / secs).rem_euclid(1.0);
+                    let h = cycle_hue(dir * dt / secs);
                     let c = Hsl { h, s: if c0.s > 0.0 { c0.s } else { 1.0 }, l: if c0.l > 0.0 { c0.l } else { 0.5 } };
                     (Target::solid(c.to_hs255()), "animado pelo programa")
                 }

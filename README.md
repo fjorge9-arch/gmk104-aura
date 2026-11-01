@@ -58,7 +58,7 @@ and, optionally, the `%LOCALAPPDATA%\gmk104-aura` folder (just a log and a marke
   |---|---|
   | Static | same solid color |
   | Breathing | native breathing effect, same color, closest of 5 speed levels (Aura's `freq` is in Hz) |
-  | Color cycle | hue rotation computed by the program: 12.5 s per revolution, starts at green 2.5 s after the switch, so it stays in step with the board |
+  | Color cycle | hue computed by the program from a webcam-measured curve of the board's own cycle (12.5 s per revolution, non-uniform speed, phase anchored to the moment Aura wrote the script), so it stays in step with the board even across program restarts |
   | Rainbow | native color-gradient effect (TRAVERSE); the board takes 14.5 s per revolution, the keyboard's slowest level 8 s |
   | Strobing | brightness pulsed by the program at the script frequency (2.4 Hz); your brightness level is restored afterwards |
   | Starry night | native starry effect, same color, slowest level |
