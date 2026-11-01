@@ -1,0 +1,6 @@
+/target/
+/rust/
+__pycache__/
+*.pyc
+.venv/
+*.log

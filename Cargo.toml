@@ -1,0 +1,33 @@
+[package]
+name = "gmk104-aura"
+version = "0.4.0"
+edition = "2021"
+description = "Teclado ZUOYA GMK104 segue a cor que o ASUS Aura Sync aplica na placa-mãe"
+license = "MIT"
+repository = "https://github.com/fjorge9/gmk104-aura"
+build = "build.rs"
+
+[dependencies]
+hidapi = "2"
+roxmltree = "0.20"
+winreg = "0.55"
+windows-sys = { version = "0.59", features = [
+    "Win32_Foundation",
+    "Win32_Graphics_Gdi",
+    "Win32_System_Console",
+    "Win32_System_LibraryLoader",
+    "Win32_System_SystemInformation",
+    "Win32_System_Threading",
+    "Win32_UI_Shell",
+    "Win32_UI_WindowsAndMessaging",
+] }
+
+[build-dependencies]
+winres = "0.1"
+
+[profile.release]
+opt-level = "s"
+lto = true
+codegen-units = 1
+strip = true
+panic = "abort"
