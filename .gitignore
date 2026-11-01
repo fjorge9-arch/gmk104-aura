@@ -7,3 +7,4 @@ __pycache__/
 .vscode/
 fixtures/calib/*.jpg
 fixtures/calib/*.csv
+fixtures/calib/*.mp4

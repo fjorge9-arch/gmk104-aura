@@ -12,6 +12,8 @@ showing the keyboard's current color.
 > Armoury Crate and other plugins (Corsair, etc.) are left untouched. The program only **reads** what
 > Aura has already decided and repeats it on the keyboard.
 
+▶️ **Demo video** (effects switched live in Armoury Crate): https://youtu.be/buwhXD9smnI
+
 ## Install (regular users)
 
 1. Download `gmk104-aura.exe` from the [Releases](../../releases/latest) page.

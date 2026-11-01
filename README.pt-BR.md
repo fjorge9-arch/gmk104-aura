@@ -12,6 +12,8 @@ do relógio mostrando a cor atual do teclado.
 > O Armoury Crate e os outros plugins (Corsair, etc.) continuam intocados. O programa apenas **lê** o
 > que o Aura já decidiu e repete no teclado.
 
+▶️ **Vídeo de demonstração** (efeitos trocados ao vivo no Armoury Crate): https://youtu.be/buwhXD9smnI
+
 ## Instalação (usuário comum)
 
 1. Baixe `gmk104-aura.exe` na página de [Releases](../../releases/latest).
